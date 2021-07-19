@@ -3,68 +3,30 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      justifyContent: `space-between`,
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <ul
-      style={{
-        display: `flex`,
-        flexDirection: `row`,
-        listStyleType: `none`,
-      }}
-    >
-      <li>
-        <h1 style={{ margin: 0 }}>
-          <Link
-            to="/"
-            style={{
-              color: `white`,
-              textDecoration: `none`,
-            }}
-          >
-            {siteTitle}
-          </Link>
-        </h1>
-      </li>
+  <div className="header">
+    <h1 className="icon">
+      <Link to="/" className="header-link">
+        {siteTitle}
+      </Link>
+    </h1>
+    <ul>
       <li style={{ marginTop: `1rem` }}>
-        <Link
-          to="/about"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
+        <Link to="/about" className="header-link">
           Projects
         </Link>
       </li>
       <li style={{ marginTop: `1rem` }}>
-        <Link
-          to="/about"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
+        <Link to="/about" className="header-link">
           Store
         </Link>
       </li>
       <li style={{ marginTop: `1rem` }}>
-        <Link
-          to="/about"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
+        <Link to="/about" className="header-link">
           About Me
         </Link>
       </li>
     </ul>
-  </header>
+  </div>
 )
 
 Header.propTypes = {
