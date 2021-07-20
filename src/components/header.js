@@ -5,25 +5,17 @@ import { Link } from "gatsby"
 const Header = ({ siteTitle }) => (
   <div className="header">
     <h1 className="icon">
-      <Link to="/" className="header-link">
-        {siteTitle}
-      </Link>
+      <Link to="/">{siteTitle}</Link>
     </h1>
     <ul>
-      <li style={{ marginTop: `1rem` }}>
-        <Link to="/about" className="header-link">
-          Projects
-        </Link>
+      <li>
+        <Link to="/about">Projects</Link>
       </li>
-      <li style={{ marginTop: `1rem` }}>
-        <Link to="/about" className="header-link">
-          Store
-        </Link>
+      <li>
+        <Link to="/about">Store</Link>
       </li>
-      <li style={{ marginTop: `1rem` }}>
-        <Link to="/about" className="header-link">
-          About Me
-        </Link>
+      <li>
+        <Link to="/about">About Me</Link>
       </li>
     </ul>
   </div>
