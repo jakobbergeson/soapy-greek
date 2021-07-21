@@ -16,7 +16,7 @@ a {
   background-color: transparent;
   text-decoration: none;
   color: black;
-  transition: color 0.5s;
+  transition: color 0.4s;
   display: block;
   padding: 10px 20px;
 }
@@ -134,8 +134,8 @@ h6 {
   display: flex;
   height: 400px;
   margin-left: 0px;
-  padding-left: 70px;
-  padding-right: 170px;
+  padding-left: 20px;
+  padding-right: 20px;
   border-top-style: solid;
   border-top-width: 1px;
   border-top-color: #dde1e7;
@@ -151,11 +151,16 @@ h6 {
 }
 
 .footer-child p {
-  max-width: 33%;
+  max-width: 43%;
+  margin-left: 10px;
 }
 
 .footer-child:first-child {
   border-style: none solid none none;
+}
+
+.footer-child:last-child {
+  border-style: none none none solid;
 }
 
 .footer-notes {
@@ -206,6 +211,11 @@ h6 {
   opacity: 0.46;
   flex-direction: row;
   align-content: space-between;
+  transition: opacity 0.4s;
+}
+
+.social-block a:hover {
+  opacity: 1;
 }
 
 .social-icon {
@@ -218,7 +228,7 @@ h6 {
   opacity: inherit;
   flex-direction: row;
   font-size: 26px;
-  transition: opacity 0.5s;
+  transition: opacity 0.4s;
 }
 
 .social-icon:hover {
@@ -227,6 +237,7 @@ h6 {
 
 ul {
   margin-top: 0px;
+  padding-left: 0px;
 }
 
 li {

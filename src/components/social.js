@@ -5,20 +5,19 @@ import {
   faTwitch,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons"
-import { Link } from "gatsby"
 
 const Social = () => {
   return (
     <div className="social-block">
-      <Link to="https://www.twitch.tv/soapygreek">
+      <a href="https://www.twitch.tv/soapygreek" target="_blank">
         <FontAwesomeIcon icon={faTwitch} className="social-icon" />
-      </Link>
-      <Link to="https://twitter.com/?lang=en">
+      </a>
+      <a href="https://twitter.com/?lang=en" target="_blank">
         <FontAwesomeIcon icon={faTwitter} className="social-icon" />
-      </Link>
-      <Link to="https://www.instagram.com/timodowning/">
+      </a>
+      <a href="https://www.instagram.com/timodowning/" target="_blank">
         <FontAwesomeIcon icon={faInstagram} className="social-icon" />
-      </Link>
+      </a>
     </div>
   )
 }

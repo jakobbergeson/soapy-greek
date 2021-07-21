@@ -2,13 +2,15 @@ import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Link } from "gatsby"
 import Social from "./social"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faSoap } from "@fortawesome/free-solid-svg-icons"
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
-          author
+          title
         }
       }
     }
@@ -45,12 +47,24 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+          <div className="footer-child">
+            <FontAwesomeIcon
+              icon={faSoap}
+              size="5x"
+              spin
+              style={{
+                marginTop: "70px",
+                marginLeft: "150px",
+                marginRight: "150px",
+              }}
+            />
+          </div>
         </div>
       </div>
       <div className="footer-notes">
         <div className="footer-notes-template">
           <div className="copyright-text">
-            © 2021 Soapy Greek. All rights reserved.
+            © 2021 {data.site.siteMetadata.title}. All rights reserved.
           </div>
         </div>
       </div>
