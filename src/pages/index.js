@@ -12,7 +12,7 @@ const IndexPage = () => (
       width={300}
       quality={95}
       formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
+      alt="A bar of soap"
       style={{ marginBottom: `1.45rem` }}
     />
     <br></br>
@@ -21,7 +21,7 @@ const IndexPage = () => (
       width={300}
       quality={95}
       formats={["AUTO", "WEBP", "AVIF"]}
-      alt="A Gatsby astronaut"
+      alt="A bar of soap"
       style={{ marginBottom: `1.45rem` }}
     />
   </Layout>
