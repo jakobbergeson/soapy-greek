@@ -9,13 +9,21 @@ import {
 const Social = () => {
   return (
     <div className="social-block">
-      <a href="https://www.twitch.tv/soapygreek" target="_blank">
+      <a
+        href="https://www.twitch.tv/soapygreek"
+        target="_blank"
+        rel="noreferrer"
+      >
         <FontAwesomeIcon icon={faTwitch} className="social-icon" />
       </a>
-      <a href="https://twitter.com/?lang=en" target="_blank">
+      <a href="https://twitter.com/?lang=en" target="_blank" rel="noreferrer">
         <FontAwesomeIcon icon={faTwitter} className="social-icon" />
       </a>
-      <a href="https://www.instagram.com/timodowning/" target="_blank">
+      <a
+        href="https://www.instagram.com/timodowning/"
+        target="_blank"
+        rel="noreferrer"
+      >
         <FontAwesomeIcon icon={faInstagram} className="social-icon" />
       </a>
     </div>
