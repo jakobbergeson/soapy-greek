@@ -12,6 +12,9 @@ body {
   color: hsla(0, 0%, 0%, 0.8);
   font-family: georgia, serif;
 }
+div {
+  display: block;
+}
 a {
   background-color: transparent;
   text-decoration: none;
@@ -276,10 +279,35 @@ h6 {
   margin-right: 5%;
 }
 
-.video {
+.split-hero-wrapper {
   display: flex;
   overflow: hidden;
   justify-content: center;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  object-fit: fill;
+  height: auto;
+  width: 100%;
+  padding: 0px;
+}
+
+.split-hero-box {
+  width: 33.33%;
+  align-self: flex-start;
+  flex: 0 0 auto;
+  transition: all 300ms ease;
+}
+
+.split-hero-box:hover {
+  width: 40%;
+}
+
+.split-child {
+  display: flex;
+  height: 600px;
+  width: auto;
+  position: relative;
+  background: white;
 }
 
 ul {
