@@ -23,7 +23,7 @@ const IndexPage = () => (
     >
       <StaticImage
         src="../images/soap.jpeg"
-        width="33.33%"
+        width={"33.33%"}
         quality={95}
         formats={["AUTO", "WEBP", "AVIF"]}
         alt="A bar of soap"
@@ -31,7 +31,7 @@ const IndexPage = () => (
       />
       <StaticImage
         src="../images/soap.jpeg"
-        width="33.33%"
+        width={"33.33%"}
         quality={95}
         formats={["AUTO", "WEBP", "AVIF"]}
         alt="A bar of soap"
@@ -39,7 +39,7 @@ const IndexPage = () => (
       />
       <StaticImage
         src="../images/soap.jpeg"
-        width="33.33%"
+        width={"33.33%"}
         quality={95}
         formats={["AUTO", "WEBP", "AVIF"]}
         alt="A bar of soap"
