@@ -3,6 +3,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import HeadTag from "../components/head"
 import SplitHero from "../components/split-hero"
+import SimpleSwiper from "../components/simple-swiper"
 
 const IndexPage = () => (
   <Layout>
@@ -45,6 +46,7 @@ const IndexPage = () => (
         style={{ marginBottom: `1.45rem` }}
       />
     </div>
+    <SimpleSwiper />
   </Layout>
 )
 
