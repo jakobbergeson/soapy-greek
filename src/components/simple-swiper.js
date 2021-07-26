@@ -1,9 +1,21 @@
-import React from "react"
+import React, { useState, useEffect, useCallback } from "react"
 import Swiper from "react-id-swiper"
 import "swiper/swiper.min.css"
+import { StaticImage } from "gatsby-plugin-image"
 
-const SimpleSwiper = () => {
+const SimpleSwiper = ({ images, index }) => {
+  const [swiper, setSwiper] = useState(null)
+  useEffect(() => {
+    if (swiper !== null) {
+      swiper.slideToLoop(index)
+    }
+  }, [swiper, index])
+
   const params = {
+    getSwiper: setSwiper,
+    slidesPerView: 1,
+    loop: true,
+    calculateHeight: true,
     pagination: {
       el: ".swiper-pagination",
       type: "bullets",
@@ -16,20 +28,51 @@ const SimpleSwiper = () => {
     spaceBetween: 30,
   }
 
+  const goNext = useCallback(() => {
+    if (swiper !== null) {
+      swiper.slideNext()
+    }
+  })
+
+  const goPrev = useCallback(() => {
+    if (swiper !== null) {
+      swiper.slidePrev()
+    }
+  })
+
   return (
-    <Swiper {...params}>
-      <div>Slide 1</div>
-      <div>Slide 2</div>
-      <div>Slide 3</div>
-      <div>Slide 4</div>
-      <div>Slide 5</div>
-      <div class="swiper-pagination"></div>
-
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-
-      <div class="swiper-scrollbar"></div>
-    </Swiper>
+    <>
+      <div onClick={goPrev} />
+      <div onClick={goNext} />
+      <div style={{ display: "flex", alignItems: "center", height: "inherit" }}>
+        <Swiper {...params}>
+          <StaticImage
+            src="../images/soap.jpeg"
+            width={"33.33%"}
+            quality={95}
+            formats={["AUTO", "WEBP", "AVIF"]}
+            alt="A bar of soap"
+            style={{ marginBottom: `1.45rem` }}
+          />
+          <StaticImage
+            src="../images/soap.jpeg"
+            width={"33.33%"}
+            quality={95}
+            formats={["AUTO", "WEBP", "AVIF"]}
+            alt="A bar of soap"
+            style={{ marginBottom: `1.45rem` }}
+          />
+          <StaticImage
+            src="../images/soap.jpeg"
+            width={"33.33%"}
+            quality={95}
+            formats={["AUTO", "WEBP", "AVIF"]}
+            alt="A bar of soap"
+            style={{ marginBottom: `1.45rem` }}
+          />
+        </Swiper>
+      </div>
+    </>
   )
 }
 export default SimpleSwiper
