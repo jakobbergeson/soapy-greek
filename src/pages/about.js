@@ -12,7 +12,7 @@ const SecondPage = () => (
       aspectRatio={18 / 4}
       layout="fullWidth"
       placeholder="blurred"
-      formats={["AUTO", "WEBP", "AVIF"]}
+      formats={["AUTO", "WEBP", "AVIF", "JPG"]}
       alt="Soap Hero"
     />
     <div className="hero-title">
