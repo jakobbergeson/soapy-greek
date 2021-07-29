@@ -4,6 +4,8 @@ html {
   font: 112.5%/1.45em georgia, serif, sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #f6f6f6;
 }
 body {
   margin: 0;
@@ -27,7 +29,7 @@ a:active,
 a:hover {
   outline-width: 0;
   color: rgb(73, 4, 143);
-  background-color: rgb(242, 238, 245);
+  background-color: rgb(238, 232, 243);
 }
 
 p {
@@ -103,7 +105,7 @@ h6 {
   top: 0;
   z-index: 200;
   justify-content: space-between;
-  background-color: white;
+  background-color: #f6f6f6;
   opacity: 98%;
   border-bottom-style: solid;
   border-bottom-width: 1px;
@@ -200,6 +202,7 @@ h6 {
   flex-direction: row;
   align-content: space-between;
 }
+
 .social-block a {
   display: flex;
   height: 40px;
@@ -213,11 +216,12 @@ h6 {
   opacity: 0.46;
   flex-direction: row;
   align-content: space-between;
-  transition: opacity 0.4s;
+  transition: all 0.4s;
 }
 
 .social-block a:hover {
   opacity: 1;
+  border-color: rgb(73, 4, 143);
 }
 
 .social-icon {
@@ -303,6 +307,32 @@ h6 {
   height: 600px;
   width: auto;
   background: white;
+}
+
+.slider-wrapper {
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 10px;
+  justify-content: center;
+}
+
+.slider-wrapper button::before {
+  color: rgb(40, 13, 66);
+}
+
+.slider {
+  max-width: 85%;
+}
+
+.slider-child {
+  width: inherit;
+}
+
+.slider-child img {
+  margin: 30px auto;
+  object-fit: contain;
+  max-height: 300px;
 }
 
 ul {

@@ -13,39 +13,6 @@ const IndexPage = () => (
       videoTitle="Never Gonna Give You Up"
     />
     <br></br>
-    <div
-      style={{
-        width: "100%",
-        display: "flex",
-        justifyContent: "space-between",
-        height: "400px",
-      }}
-    >
-      <StaticImage
-        src="../images/soap.jpeg"
-        width={"33.33%"}
-        quality={95}
-        formats={["AUTO", "WEBP", "AVIF"]}
-        alt="A bar of soap"
-        style={{ marginBottom: `1.45rem` }}
-      />
-      <StaticImage
-        src="../images/soap.jpeg"
-        width={"33.33%"}
-        quality={95}
-        formats={["AUTO", "WEBP", "AVIF"]}
-        alt="A bar of soap"
-        style={{ marginBottom: `1.45rem` }}
-      />
-      <StaticImage
-        src="../images/soap.jpeg"
-        width={"33.33%"}
-        quality={95}
-        formats={["AUTO", "WEBP", "AVIF"]}
-        alt="A bar of soap"
-        style={{ marginBottom: `1.45rem` }}
-      />
-    </div>
     <SimpleSwiper />
   </Layout>
 )

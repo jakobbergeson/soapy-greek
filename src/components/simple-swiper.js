@@ -1,78 +1,84 @@
-import React, { useState, useEffect, useCallback } from "react"
-import Swiper from "react-id-swiper"
-import "swiper/swiper.min.css"
+import React, { Component } from "react"
 import { StaticImage } from "gatsby-plugin-image"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import Slider from "react-slick"
 
-const SimpleSwiper = ({ images, index }) => {
-  const [swiper, setSwiper] = useState(null)
-  useEffect(() => {
-    if (swiper !== null) {
-      swiper.slideToLoop(index)
+export default class SimpleSlider extends Component {
+  render() {
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 3,
+      slidesToScroll: 1,
     }
-  }, [swiper, index])
-
-  const params = {
-    getSwiper: setSwiper,
-    slidesPerView: 1,
-    loop: true,
-    calculateHeight: true,
-    pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    spaceBetween: 30,
-  }
-
-  const goNext = useCallback(() => {
-    if (swiper !== null) {
-      swiper.slideNext()
-    }
-  })
-
-  const goPrev = useCallback(() => {
-    if (swiper !== null) {
-      swiper.slidePrev()
-    }
-  })
-
-  return (
-    <>
-      <div onClick={goPrev} />
-      <div onClick={goNext} />
-      <div style={{ display: "flex", alignItems: "center", height: "inherit" }}>
-        <Swiper {...params}>
-          <StaticImage
-            src="../images/soap.jpeg"
-            width={"33.33%"}
-            quality={95}
-            formats={["AUTO", "WEBP", "AVIF"]}
-            alt="A bar of soap"
-            style={{ marginBottom: `1.45rem` }}
-          />
-          <StaticImage
-            src="../images/soap.jpeg"
-            width={"33.33%"}
-            quality={95}
-            formats={["AUTO", "WEBP", "AVIF"]}
-            alt="A bar of soap"
-            style={{ marginBottom: `1.45rem` }}
-          />
-          <StaticImage
-            src="../images/soap.jpeg"
-            width={"33.33%"}
-            quality={95}
-            formats={["AUTO", "WEBP", "AVIF"]}
-            alt="A bar of soap"
-            style={{ marginBottom: `1.45rem` }}
-          />
-        </Swiper>
+    return (
+      <div className="slider-wrapper">
+        <Slider {...settings} className="slider">
+          <div>
+            <StaticImage
+              className="slider-child"
+              src="../images/soap.jpeg"
+              quality={95}
+              formats={["AUTO", "WEBP", "AVIF"]}
+              alt="A bar of soap"
+            />
+          </div>
+          <div>
+            <StaticImage
+              className="slider-child"
+              src="../images/soap.jpeg"
+              quality={95}
+              formats={["AUTO", "WEBP", "AVIF"]}
+              alt="A bar of soap"
+            />
+          </div>
+          <div>
+            <StaticImage
+              className="slider-child"
+              src="../images/soap.jpeg"
+              quality={95}
+              formats={["AUTO", "WEBP", "AVIF"]}
+              alt="A bar of soap"
+            />
+          </div>
+          <div style={{ height: "100%" }}>
+            <StaticImage
+              className="slider-child"
+              src="../images/soap.jpeg"
+              quality={95}
+              formats={["AUTO", "WEBP", "AVIF"]}
+              alt="A bar of soap"
+            />
+          </div>
+          {/* <div> */}
+          {/* <StaticImage
+              className="slider-child"
+              src="../images/soap.jpeg"
+              quality={95}
+              formats={["AUTO", "WEBP", "AVIF"]}
+              alt="A bar of soap"
+            />
+          </div>
+          <div>
+            <StaticImage
+              src="../images/soap.jpeg"
+              quality={95}
+              formats={["AUTO", "WEBP", "AVIF"]}
+              alt="A bar of soap"
+            />
+          </div>
+          <div>
+            <StaticImage
+              src="../images/soap.jpeg"
+              quality={95}
+              formats={["AUTO", "WEBP", "AVIF"]}
+              alt="A bar of soap"
+            />
+          </div> */}
+        </Slider>
       </div>
-    </>
-  )
+    )
+  }
 }
-export default SimpleSwiper
