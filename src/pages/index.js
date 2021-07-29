@@ -8,10 +8,7 @@ import SimpleSwiper from "../components/simple-swiper"
 const IndexPage = () => (
   <Layout>
     <HeadTag title="Home" />
-    <SplitHero
-      videoSrcURL="https://www.youtube.com/embed/dQw4w9WgXcQ"
-      videoTitle="Never Gonna Give You Up"
-    />
+    <SplitHero />
     <br></br>
     <SimpleSwiper />
   </Layout>
