@@ -1,5 +1,6 @@
+/** @jsx jsx */
 import * as React from "react"
-import { StaticImage } from "gatsby-plugin-image"
+import { jsx } from "theme-ui"
 import Layout from "../components/layout"
 import HeadTag from "../components/head"
 import SplitHero from "../components/split-hero"

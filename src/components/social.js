@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import * as React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
@@ -20,7 +22,7 @@ const Social = () => {
         <FontAwesomeIcon icon={faTwitter} className="social-icon" />
       </a>
       <a
-        href="https://www.instagram.com/timodowning/"
+        href="https://www.instagram.com/soapy_greek/"
         target="_blank"
         rel="noreferrer"
       >
