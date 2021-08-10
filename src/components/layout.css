@@ -1,18 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  font: 112.5%/1.45em Kanit, sans-serif;
-}
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  /* font: 112.5%/1.45em */
 }
 
 a {
-  background-color: transparent;
+
   text-decoration: none;
   color: inherit;
   transition: color 0.4s;
@@ -27,14 +22,13 @@ a:hover {
 
 p {
   font-size: 16px;
-  line-height: 25px;
+  line-height: 1.6;
   margin-bottom: 20px;
 }
 
 h1 {
   margin-bottom: 1.45rem;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family:inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
@@ -43,8 +37,7 @@ h1 {
 
 h2 {
   margin-bottom: 1.45rem;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.62671rem;
@@ -52,8 +45,7 @@ h2 {
 }
 h3 {
   margin-bottom: 1.45rem;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
@@ -61,8 +53,7 @@ h3 {
 }
 h4 {
   margin-bottom: 1.45rem;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
@@ -70,8 +61,7 @@ h4 {
 }
 h5 {
   margin-bottom: 1.45rem;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.85028rem;
@@ -79,36 +69,41 @@ h5 {
 }
 h6 {
   margin-bottom: 1.45rem;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.78405rem;
   line-height: 1.1;
 }
 
+
 .header-wrapper{
   display: flex;
-      justify-content: center;
-      position: sticky;
-      top: 0;
-      z-index: 200;
-      background-color: #f6f6f6;
-      border-bottom-style: solid;
-      border-bottom-width: 1px;
-      border-bottom-color: #dde1e7;
-      align-items: center;
-      padding: 1%;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background-color: #f6f6f6;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #dde1e7;
+  align-items: center;
+  padding: 1%;
+  opacity: 98%;
 }
 
 .header-list{
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   justify-content: flex-start;
   font-size: 1.1rem;
   margin-bottom: 0px;
   opacity: 98%;
+}
+
+.header-list li{
+  margin-right: 35px;
+  font-weight: 600;
 }
 
 .icon {
@@ -148,10 +143,11 @@ h6 {
   padding-left: 40px;
   padding-top: 2%;
   min-height: min-content;
+  justify-content: center;
 }
 
 .footer-child p {
-  max-width: 43%;
+ width: 43%;
   margin-left: 10px;
 }
 
@@ -195,7 +191,8 @@ h6 {
 .social-block {
   display: flex;
   height: 40px;
-  margin-right: -1px;
+  margin-left: 1px;
+  margin-right: 5%;
   padding-top: 0px;
   margin-bottom: 3%;
   float: none;
@@ -269,21 +266,26 @@ h6 {
   display: flex;
   height: 500px;
   margin-left: 0px;
-  padding-left: 10%;
-  padding-right: 10%;
+  justify-content: space-between;
+  align-content: space-between;
+  margin: 0 auto;
   padding-bottom: 1%;
 }
 
 .story-child {
   flex: 1;
   text-align: left;
-  padding-left: 5%;
   padding-top: 4%;
+  padding-left: 5%;
+  padding-bottom: 3%;
   max-height: 500px;
+  min-height: max-content;
 }
 
-.story-child:first-child {
-  margin-right: 5%;
+.story-child img {
+  color: red;
+  
+ 
 }
 
 .split-hero-wrapper {
@@ -333,7 +335,7 @@ h6 {
 }
 
 .slider-child img {
-  margin: 30px auto;
+  margin: 30px 20px;
   object-fit: contain;
   max-height: 300px;
 }

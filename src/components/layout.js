@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div sx={{ bg: "primary", color: "text" }}>
+      <div sx={{ bg: "primary", color: "text", fontFamily:"body", lineHeights: "body" }}>
         <main>{children}</main>
 
         <Footer />

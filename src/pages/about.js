@@ -42,7 +42,7 @@ const SecondPage = () => (
 
         <div className="story-child">
           <StaticImage
-            src="../images/soap-solid.svg"
+            src="../images/soap.jpeg"
             height={400}
             loading="eager"
             placeholder="blurred"
