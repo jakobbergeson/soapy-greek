@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Link } from "gatsby"
@@ -65,7 +67,8 @@ const Footer = () => {
       <div className="footer-notes">
         <div className="footer-notes-template">
           <div className="copyright-text">
-            © 2021 {data.site.siteMetadata.title}. All rights reserved.
+            © 2021 <span>{data.site.siteMetadata.title}</span>. All rights
+            reserved.
           </div>
         </div>
       </div>

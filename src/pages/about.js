@@ -1,4 +1,6 @@
+/** @jsx jsx */
 import * as React from "react"
+import { jsx } from "theme-ui"
 import HeadTag from "../components/head"
 import Layout from "../components/layout"
 import { StaticImage } from "gatsby-plugin-image"
@@ -40,7 +42,7 @@ const SecondPage = () => (
 
         <div className="story-child">
           <StaticImage
-            src="../images/soap-solid.svg"
+            src="../images/soap.jpeg"
             height={400}
             loading="eager"
             placeholder="blurred"
