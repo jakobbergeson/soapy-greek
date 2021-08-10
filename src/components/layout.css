@@ -3,7 +3,6 @@
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  /* font: 112.5%/1.45em */
 }
 
 a {
@@ -338,6 +337,40 @@ h6 {
   margin: 30px 20px;
   object-fit: contain;
   max-height: 300px;
+}
+
+.posts {
+  list-style-type: none;
+  display:flex;
+  flex-direction: column;
+  align-items: space-around;
+}
+
+.post {
+  margin: 1rem 20% 1rem 20%;
+}
+
+.post a {
+  background: #f4f4f4;
+  display: block;
+  padding: 1rem;
+  transition: color 0.4s;
+}
+
+.post a:hover {
+  outline-width: 0;
+  color: rgb(73, 4, 143);
+  background-color: rgb(238, 232, 243);
+}
+
+.post h2 {
+  margin-bottom: 0;
+}
+
+.post p {
+  color: #777777;
+  font-size: 0.8rem;
+  font-style: italic;
 }
 
 ul {

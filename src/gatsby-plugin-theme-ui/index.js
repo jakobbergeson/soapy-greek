@@ -54,7 +54,8 @@ const theme = {
     root: {
       fontFamily: 'body',
       lineHeight: 'body',
-      fontWeight: 'body'
+      fontWeight: 'body',
+      bg: 'primary',
     },
     h1: {
       color: 'text',
