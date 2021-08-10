@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Soapy Greek`,
@@ -18,6 +22,28 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-source-contentful`,
+            options: {
+              spaceId: process.env.CONTENTFUL_SPACE_ID,
+              accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+            },
+          },
+          "gatsby-remark-relative-images",
+          "gatsby-plugin-image",
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 750,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

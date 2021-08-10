@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import HeadTag from "../components/head"
 import SplitHero from "../components/split-hero"
 import SimpleSwiper from "../components/simple-swiper"
+import Blog from "../components/blog"
 
 const IndexPage = () => (
   <Layout>
@@ -12,6 +13,8 @@ const IndexPage = () => (
     <SplitHero />
     <br></br>
     <SimpleSwiper />
+    <br></br>
+    <Blog/>
   </Layout>
 )
 
