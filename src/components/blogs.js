@@ -3,21 +3,22 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 
 const Blog = () => {
   const data = useStaticQuery(graphql`
-    query {
-      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
-        edges {
-          node {
-            title
-            slug
-            publishedDate(formatString: "MMMM Do, YYYY")
-          }
+  query {
+    allContentfulBlogPost(limit:10 sort: { fields: publishedDate, order: DESC }){
+      edges {
+        node {
+          title
+          slug
+          publishedDate(formatString: "MMMM Do YYYY, h:mm a")
+          
         }
       }
     }
+  }
   `)
 
   return (
-    <>
+    <div className = "posts-wrapper">
       <h1>Blog</h1>
       <ol className="posts">
         {data.allContentfulBlogPost.edges.map(edge => {
@@ -31,7 +32,7 @@ const Blog = () => {
           )
         })}
       </ol>
-    </>
+    </div>
   )
 }
 export default Blog
