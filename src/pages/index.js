@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import HeadTag from "../components/head"
 import SplitHero from "../components/split-hero"
 import SimpleSwiper from "../components/simple-swiper"
-import Blog from "../components/blog"
+import Blog from "../components/blogs"
 
 const IndexPage = () => (
   <Layout>
