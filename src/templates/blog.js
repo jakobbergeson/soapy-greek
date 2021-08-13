@@ -16,6 +16,7 @@ export const query = graphql`
           ... on ContentfulAsset {
             __typename
             contentful_id
+            title
             fixed {
               src
             }
@@ -33,7 +34,7 @@ const body = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
     [BLOCKS.EMBEDDED_ASSET]: node => {
-      return <div className="story-child"><img src={node.data.target.fixed.src} alt="bandage"></img></div> 
+      return <div className="story-child"><img src={node.data.target.fixed.src} alt={node.data.target.title}></img></div> 
     },
   },
 }
