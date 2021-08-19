@@ -4,7 +4,7 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 const Blog = () => {
   const data = useStaticQuery(graphql`
   query {
-    allContentfulBlogPost(limit:10 sort: { fields: publishedDate, order: DESC }){
+    allContentfulBlogPost(limit:4 sort: { fields: publishedDate, order: DESC }){
       edges {
         node {
           title
