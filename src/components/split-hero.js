@@ -1,34 +1,35 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import React from "react"
-import { StaticImage } from "gatsby-plugin-image"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+// import { faPlayCircle
+//   } from "@fortawesome/free-regular-svg-icons"
+import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
+  
 
-const SplitHero = () => (
-  <div className="split-hero-wrapper">
-    <div className="split-hero-box">
-      <StaticImage
-        src="../images/soap-solid.svg"
-        alt="Soap"
-        className="split-child"
-        placeholder="tracedSVG"
-      />
+const SplitHero = ({title, link, image}) => (
+    <div className="split-hero-box" >
+        <div className="split-child" 
+        style={{
+        backgroundImage: `url(${image})`,
+        backgroundSize: "cover",
+        backgroundPositionX: "50%",
+        backgroundPositionY: "50%",
+        backgroundRepeat: "noRepeat"
+        }}>
+        <div className="img-overlay">
+        <div className="split-child-content">
+        <h2>{title}</h2>
+        <a
+        href={link}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <FontAwesomeIcon icon={faPlayCircle} className="split-child-icon"/>
+      </a>
+        </div>
+        </div>
+        </div>
     </div>
-    <div className="split-hero-box">
-      <StaticImage
-        src="../images/soap.jpeg"
-        alt="Soap"
-        className="split-child"
-        placeholder="tracedSVG"
-      />
-    </div>
-    <div className="split-hero-box">
-      <StaticImage
-        src="../images/soap-solid.svg"
-        alt="Soap"
-        className="split-child"
-        placeholder="tracedSVG"
-      />
-    </div>
-  </div>
 )
+
 export default SplitHero

@@ -45,7 +45,10 @@ const Blog = props => {
         </div>
         {image &&
           <div className="story-child-img">
-            <GatsbyImage image={image} alt={props.data.contentfulBlogPost.blogPicture.title}></GatsbyImage>
+            <GatsbyImage 
+            image={image} 
+            alt={props.data.contentfulBlogPost.blogPicture.title}
+            />
           </div>
         }
         </div>
