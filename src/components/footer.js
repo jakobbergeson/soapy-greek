@@ -55,6 +55,7 @@ const Footer = () => {
               icon={faSoap}
               size="5x"
               spin
+              style={{color: "rgb(73, 4, 143)"}}
             />
           </div>
         </div>

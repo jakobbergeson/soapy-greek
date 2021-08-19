@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { GatsbyImage, getImage,StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage} from "gatsby-plugin-image"
 import { graphql,  useStaticQuery } from "gatsby"
 
 
@@ -29,13 +29,16 @@ const AboutHero = () => {
 
     <div className="story-hero">
     <h1>{data.allContentfulAboutMeHero.edges[0].node.heroSentence}</h1>
-    <GatsbyImage image={image} alt={data.allContentfulAboutMeHero.edges[0].node.heroImage.title} 
+    <GatsbyImage 
+    image={image} 
+    alt={data.allContentfulAboutMeHero.edges[0].node.heroImage.title} 
     style={{
     zIndex: "-1",
     position: "absolute",
     top: "0",
     left:"0"
-    }}/>
+    }}
+    />
     </div>
   )
 }
