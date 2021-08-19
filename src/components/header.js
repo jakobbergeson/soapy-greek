@@ -3,6 +3,7 @@ import { jsx } from "theme-ui"
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import About from "./about"
 
 const Header = ({ siteTitle }) => (
   <div
@@ -18,7 +19,7 @@ const Header = ({ siteTitle }) => (
             <Link to="/about">Store</Link>
           </li>
           <li>
-            <Link to="/about">About Me</Link>
+            <About/>
           </li>
         </ul>
   </div>

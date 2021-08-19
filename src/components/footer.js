@@ -55,11 +55,6 @@ const Footer = () => {
               icon={faSoap}
               size="5x"
               spin
-              style={{
-                marginTop: "70px",
-                marginLeft: "150px",
-                marginRight: "150px",
-              }}
             />
           </div>
         </div>

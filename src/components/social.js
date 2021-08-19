@@ -18,7 +18,9 @@ const Social = () => {
       >
         <FontAwesomeIcon icon={faTwitch} className="social-icon" />
       </a>
-      <a href="https://twitter.com/?lang=en" target="_blank" rel="noreferrer">
+      <a href="https://twitter.com/?lang=en" 
+          target="_blank" 
+          rel="noreferrer">
         <FontAwesomeIcon icon={faTwitter} className="social-icon" />
       </a>
       <a

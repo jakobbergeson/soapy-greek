@@ -136,6 +136,8 @@ h6 {
 }
 
 .footer-child {
+  display: flex;
+  flex-direction: column;
   flex: 1;
   border-width: 1px;
   border-color: #dde1e7;
@@ -143,7 +145,6 @@ h6 {
   padding-left: 40px;
   padding-top: 2%;
   min-height: min-content;
-  justify-content: center;
 }
 
 .footer-child p {
@@ -156,6 +157,8 @@ h6 {
 }
 
 .footer-child:last-child {
+  justify-content: center;
+  align-items: center;
   border-style: none none none solid;
 }
 
@@ -190,13 +193,9 @@ h6 {
 
 .social-block {
   display: flex;
-  height: 40px;
-  margin-left: 1px;
-  margin-right: 5%;
   padding-top: 0px;
   margin-bottom: 3%;
   float: none;
-  align-self: center;
   flex-direction: row;
   align-content: space-between;
   min-height: min-content;
@@ -207,13 +206,11 @@ h6 {
   height: 100%;
   margin-right: -1px;
   padding-top: 0px;
-  float: none;
   align-self: center;
   border-style: solid;
   border-width: 1px;
   border-color: #8e98ad;
   opacity: 0.46;
-  flex-direction: row;
   align-content: space-between;
   transition: all 0.4s;
   max-height: min-content;
@@ -253,49 +250,46 @@ h6 {
   display: flex;
   padding-top: 0px;
   padding-bottom: 0px;
-  padding-left: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
   flex-direction: column;
 }
 
 .story-box {
-  display: flex;
-  height: 500px;
-  justify-content:space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
-.story-box p:empty{
+.story-child-text{
+display:flex;
+flex:1;
+flex-direction: column;
+}
+
+.story-child-text p:empty{
   display: none;
 }
 
-.story-box p{
-  display:inline;
+.story-child-text p{
+  display: inline-block;
 }
 
-.story-box p a{
-  text-decoration:underline;
+.story-child-text p a{
+  text-decoration:none;
   display:inline-block;
   padding: 0;
+  color: rgb(73, 4, 143);
 }
 
-.story-child {
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  padding-bottom: 3%;
-  max-height: 500px;
-  min-height: max-content;
-}
 
 .story-child-img {
   display: flex;
   flex: 1;
-  max-height: 400px;
-  background: linear-gradient(rgb(246,246,246), rgb(49, 51, 53));
-  background-size: cover;
-  background-repeat: no-repeat;
+  justify-content: center;
+  padding-bottom: 3%;
+  align-content: center;
 }
-
-
 
 .split-hero-wrapper {
   display: flex;
