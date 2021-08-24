@@ -25,17 +25,19 @@ const SplitHeros = () => {
 	}
   `)
 
-  const imageOne = data.allContentfulSplitHero.edges[0].node.backgroundPicture.fixed.src
-  const imageTwo = data.allContentfulSplitHero.edges[1].node.backgroundPicture.fixed.src
-  const imageThree = data.allContentfulSplitHero.edges[2].node.backgroundPicture.fixed.src
+  const [dataOne, dataTwo, dataThree] = data.allContentfulSplitHero.edges
 
-  const titleOne = data.allContentfulSplitHero.edges[0].node.title
-  const titleTwo = data.allContentfulSplitHero.edges[1].node.title
-  const titleThree = data.allContentfulSplitHero.edges[2].node.title
+  const imageOne = dataOne.node.backgroundPicture.fixed.src
+  const imageTwo = dataTwo.node.backgroundPicture.fixed.src
+  const imageThree = dataThree.node.backgroundPicture.fixed.src
 
-  const linkOne = data.allContentfulSplitHero.edges[0].node.link
-  const linkTwo = data.allContentfulSplitHero.edges[1].node.link
-  const linkThree = data.allContentfulSplitHero.edges[2].node.link
+  const titleOne = dataOne.node.title
+  const titleTwo = dataTwo.node.title
+  const titleThree = dataThree.node.title
+
+  const linkOne = dataOne.node.link
+  const linkTwo = dataTwo.node.link
+  const linkThree = dataThree.node.link
 
   return(
   <div className="split-hero-wrapper">

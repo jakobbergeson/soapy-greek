@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-// import { faPlayCircle
-//   } from "@fortawesome/free-regular-svg-icons"
 import { faPlayCircle } from "@fortawesome/free-solid-svg-icons";
   
 
