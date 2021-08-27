@@ -6,21 +6,25 @@ const About = () => {
   query {
     allContentfulAboutMeStory( limit: 1 sort: { fields: publishedDate, order: DESC }) {
 	    edges {
-            node {
-                title
-                slug
-                publishedDate(formatString: "MMMM Do YYYY")
-            }
+        node {
+          title
+          slug
         }
+      }
     }
-}
-  `)
+  }
+`)
 
   return (
-    
-    <Link to={`/about/${data.allContentfulAboutMeStory.edges[0].node.slug}`}>
-    {data.allContentfulAboutMeStory.edges[0].node.title}
-    </Link>
+    <>
+      { data.allContentfulAboutMeStory.edges.map(({ node })=>(
+        <Link to={`/about/${node.slug}`}>
+          {node.title}
+        </Link>
+        ))
+      }
+    </>
   )
 }
+
 export default About

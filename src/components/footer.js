@@ -4,6 +4,7 @@ import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Link } from "gatsby"
 import Social from "./social"
+import About from "../components/about"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faSoap } from "@fortawesome/free-solid-svg-icons"
 
@@ -40,12 +41,12 @@ const Footer = () => {
               </li>
               <li>
                 <h5>
-                  <Link to="/about">Store</Link>
+                  <Link to="/store">Store</Link>
                 </h5>
               </li>
               <li>
                 <h5>
-                  <Link to="/about">About Me</Link>
+                  <About/>
                 </h5>
               </li>
             </ul>

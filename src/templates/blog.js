@@ -24,7 +24,6 @@ export const query = graphql`
   }
 `
 
-
 const body = {
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node,children) => <p>{children}</p>
@@ -32,7 +31,9 @@ const body = {
 }
 
 const Blog = props => {
+
   const image = getImage(props.data.contentfulBlogPost.blogPicture)
+
   return (
     <Layout>
       <Head title={props.data.contentfulBlogPost.title} />

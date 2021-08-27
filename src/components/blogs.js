@@ -21,12 +21,12 @@ const Blog = () => {
     <div className = "posts-wrapper">
       <h1>Blog</h1>
       <ol className="posts">
-        {data.allContentfulBlogPost.edges.map(edge => {
+        {data.allContentfulBlogPost.edges.map(({ node }) => {
           return (
             <li className="post">
-              <Link to={`/blog/${edge.node.slug}`}>
-                <h2>{edge.node.title}</h2>
-                <p>{edge.node.publishedDate}</p>
+              <Link to={`/blog/${node.slug}`}>
+                <h2>{node.title}</h2>
+                <p>{node.publishedDate}</p>
               </Link>
             </li>
           )

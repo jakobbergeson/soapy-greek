@@ -53,6 +53,13 @@ module.exports = {
         icon: `src/images/soap-solid.svg`,
       },
     },
+    {
+      resolve: `gatsby-source-shopify`,
+      options: {
+        password: process.env.SHOPIFY_ADMIN_PASSWORD,
+        storeUrl: process.env.SHOPIFY_STORE_URL,
+      },
+    },
     `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

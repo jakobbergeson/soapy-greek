@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import About from "./about"
@@ -16,7 +15,7 @@ const Header = ({ siteTitle }) => (
             <Link to="/about">Projects</Link>
           </li>
           <li>
-            <Link to="/about">Store</Link>
+            <Link to="/store">Store</Link>
           </li>
           <li>
             <About/>
