@@ -31,7 +31,7 @@ const body = {
   }
 }
 
-const Blog = props => {
+const About = props => {
   const image = getImage(props.data.contentfulAboutMeStory.soapyGreekPortrait)
   return (
     <Layout>
@@ -56,4 +56,4 @@ const Blog = props => {
   )
 }
 
-export default Blog
+export default About

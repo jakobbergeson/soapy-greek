@@ -23,6 +23,7 @@
     "gatsby-remark-relative-images": "^2.0.2",
     "gatsby-source-contentful": "^5.11.1",
     "gatsby-source-filesystem": "^3.9.0",
+    "gatsby-source-shopify": "^5.4.0",
     "gatsby-transformer-remark": "^4.8.0",
     "gatsby-transformer-sharp": "^3.9.0",
     "prop-types": "^15.7.2",

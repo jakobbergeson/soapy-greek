@@ -24,7 +24,6 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div sx={{ color: "text", fontFamily:"body", lineHeights: "body" }}>
         <main>{children}</main>
-
         <Footer />
       </div>
     </>
