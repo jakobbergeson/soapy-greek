@@ -23,7 +23,7 @@ export const query = graphql`
 `
 
 const Product = ({ data })=> {
-  console.log("DATA", data)
+  
   const image = getImage(data.shopifyProduct.images[0])
 
   return(
@@ -31,10 +31,15 @@ const Product = ({ data })=> {
           <Head title={data.shopifyProduct.title}/>
           <div className="product-wrapper">
           <div className="product-box">
+          <div className="product-child-img">
           <GatsbyImage image={image} alt={data.shopifyProduct.title}/>
-
           </div>
-
+          <div className="product-child-text">
+            <h1> {data.shopifyProduct.title} </h1>
+            <h4> {data.shopifyProduct.description} </h4>
+            <button className="cart-button"><h4>Add to Cart</h4></button>
+          </div>
+          </div>
           </div>
 
       </Layout>
