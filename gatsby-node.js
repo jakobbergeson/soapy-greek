@@ -8,8 +8,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
   
   const blogTemplate = path.resolve("./src/templates/blog.js")
   const aboutTemplate = path.resolve("./src/templates/about.js")
-  const productTemplate = path.resolve("./src/templates/product.js") 
-  
+
   return await graphql(`
     query {
       blog: allContentfulBlogPost {
@@ -23,13 +22,6 @@ module.exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             slug
-          }
-        }
-      }
-      product: allShopifyProduct {
-        edges {
-          node {
-            handle
           }
         }
       }
@@ -52,16 +44,6 @@ module.exports.createPages = async ({ graphql, actions }) => {
         component: aboutTemplate,
         context: {
           slug: node.slug,
-        },
-      })
-    })
-
-    result.data.product.edges.forEach(({ node }) => {
-      createPage({
-        path: `/product/${node.handle}/`,
-        component: productTemplate,
-        context: {
-          handle: node.handle,
         },
       })
     })
