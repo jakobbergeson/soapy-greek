@@ -7,7 +7,6 @@ import { StoreContext } from "../../../context/store-context"
 import { AddToCart } from "../../../components/add-to-cart"
 import { NumericInput } from "../../../components/numeric-input"
 import { formatPrice } from "../../../utils/format-price"
-import { CgChevronRight as ChevronIcon } from "react-icons/cg"
 import {
   productBox,
   container,
@@ -39,17 +38,18 @@ export default function Product({ data: { product, suggestions } }) {
     images,
     images: [firstImage],
   } = product
+
   const { client } = React.useContext(StoreContext)
 
   const [variant, setVariant] = React.useState({ ...initialVariant })
   const [quantity, setQuantity] = React.useState(1)
-
+  
   const productVariant =
-    client.product.helpers.variantForOptions(product, variant) || variant
-
+  client.product.helpers.variantForOptions(product, variant) || variant
+  
   const [available, setAvailable] = React.useState(
     productVariant.availableForSale
-  )
+    )
 
   const checkAvailablity = React.useCallback(
     (productId) => {
@@ -67,24 +67,25 @@ export default function Product({ data: { product, suggestions } }) {
     [productVariant.storefrontId, client.product]
   )
 
+  
   const handleOptionChange = (index, event) => {
     const value = event.target.value
-
+    
     if (value === "") {
       return
     }
-
+    
     const currentOptions = [...variant.selectedOptions]
-
+    
     currentOptions[index] = {
       ...currentOptions[index],
       value,
     }
-
+    
     const selectedVariant = variants.find((variant) => {
       return isEqual(currentOptions, variant.selectedOptions)
     })
-
+    
     setVariant({ ...selectedVariant })
   }
 
@@ -144,10 +145,6 @@ export default function Product({ data: { product, suggestions } }) {
             <span className={noImagePreview}>No Preview image</span>
           )}
           <div>
-            <div className={breadcrumb}>
-              <Link to={product.productTypeSlug}>{product.productType}</Link>
-              <ChevronIcon size={12} />
-            </div>
             <h1 className={header}>{title}</h1>
             <p className={productDescription}>{description}</p>
             <h2 className={priceValue}>
@@ -218,13 +215,16 @@ export const query = graphql`
       images {
         # altText
         id
-        gatsbyImageData(layout: CONSTRAINED, width: 640, aspectRatio: 1)
+        gatsbyImageData(layout: CONSTRAINED, width: 540 aspectRatio: 1)
       }
       variants {
         availableForSale
         storefrontId
         title
         price
+        image{
+          gatsbyImageData
+        }
         selectedOptions {
           name
           value
