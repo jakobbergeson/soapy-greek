@@ -12,6 +12,7 @@
     height: var(--size-input);
     justify-content: center;
     transition: var(--transition);
+    cursor: pointer;
   }
   
   .addToCart:hover {

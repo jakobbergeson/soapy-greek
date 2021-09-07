@@ -13,9 +13,15 @@
 
 .remove button {
   font-size: var(--text-md);
-
+  border-style: none;
   display: inline-flex;
   align-items: center;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.remove button:hover {
+  opacity: .5;
 }
 
 .remove button svg {

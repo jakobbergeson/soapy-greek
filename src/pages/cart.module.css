@@ -18,7 +18,7 @@
 .table th {
   text-align: left;
   text-transform: uppercase;
-  font-size: var(--text-xs);
+  font-size: var(--text-md);
   padding-bottom: var(--space-2xl);
 }
 
@@ -52,8 +52,9 @@
 
 .checkoutButton {
   align-items: center;
-  background: var(--primary);
+  background: var(--text-color-hover);
   border-radius: var(--radius-md);
+  border-style: none;
   color: var(--text-color-inverted);
   display: flex;
   font-size: var(--text-md);
@@ -62,9 +63,10 @@
   justify-content: center;
   line-height: var(--solid);
   margin: var(--space-3xl) auto var(--space-md);
-  padding: var(--space-sm) var(--space-xl);
+  padding: var(--space-sm) var(--space-3xl);
   width: max-content;
   transition: var(--transition);
+  cursor: pointer;
 }
 
 .checkoutButton:hover {
