@@ -127,7 +127,7 @@ export default function Product({ data: { product, suggestions } }) {
                             ? image.altText
                             : `Product Image of ${title} #${index + 1}`
                         }
-                        image={image.gatsbyImageData}
+                        image={variant.image.gatsbyImageData}
                       />
                     </li>
                   ))}
