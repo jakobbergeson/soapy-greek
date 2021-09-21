@@ -4,7 +4,7 @@
   width: max-content;
   position: absolute;
   right: var(--space-xl);
-  bottom: 0;
+  bottom: -23px;
   padding: var(--space-md) var(--space-lg);
   font-size: var(--text-xs);
   font-weight: var(--semibold);
@@ -46,9 +46,9 @@
 }
 
 .hiding {
-  animation: hiding 1s ease;
+  animation: hiding .7s ease;
 }
 
 .showing {
-  animation: showing 1s ease-out;
+  animation: showing .8s ease-out;
 }

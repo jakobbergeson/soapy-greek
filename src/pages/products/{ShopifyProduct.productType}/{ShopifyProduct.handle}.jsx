@@ -12,19 +12,14 @@ import {
   container,
   header,
   productImageWrapper,
-  productImageList,
-  productImageListItem,
-  scrollForMore,
   noImagePreview,
   optionsWrapper,
   priceValue,
   selectVariant,
-  labelFont,
-  breadcrumb,
-  tagList,
   addToCartStyle,
-  metaSection,
   productDescription,
+  productImage,
+  productDescriptionWrapper,
 } from "./product-page.module.css"
 
 export default function Product({ data: { product, suggestions } }) {
@@ -100,51 +95,25 @@ export default function Product({ data: { product, suggestions } }) {
 
   const hasVariants = variants.length > 1
   const hasImages = images.length > 0
-  const hasMultipleImages = true || images.length > 1
 
   return (
     <Layout>
       <div className={container}>
         <div className={productBox}>
-          {hasImages && (
             <div className={productImageWrapper}>
-              <div
-                role="group"
-                aria-label="gallery"
-                aria-describedby="instructions"
-              >
-                <ul className={productImageList}>
-                  {images.map((image, index) => (
-                    <li
-                      key={`product-image-${image.id}`}
-                      className={productImageListItem}
-                    >
-                      <GatsbyImage
-                        objectFit="contain"
-                        loading={index === 0 ? "eager" : "lazy"}
-                        alt={
-                          image.altText
-                            ? image.altText
-                            : `Product Image of ${title} #${index + 1}`
-                        }
-                        image={variant.image.gatsbyImageData}
-                      />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              {hasMultipleImages && (
-                <div className={scrollForMore} id="instructions">
-                  <span aria-hidden="true">←</span> scroll for more{" "}
-                  <span aria-hidden="true">→</span>
-                </div>
-              )}
+              <GatsbyImage
+                className= {productImage}
+                objectFit="contain"
+                loading="eager"
+                alt={variant.title}
+                image={variant.image.gatsbyImageData}
+              />
             </div>
-          )}
+          
           {!hasImages && (
             <span className={noImagePreview}>No Preview image</span>
           )}
-          <div>
+          <div className={productDescriptionWrapper}>
             <h1 className={header}>{title}</h1>
             <p className={productDescription}>{description}</p>
             <h2 className={priceValue}>

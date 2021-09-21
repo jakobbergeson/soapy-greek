@@ -19,3 +19,16 @@
     box-shadow: var(--shadow);
     transform: var(--transform);
   }
+
+  @media (max-width: 840px) {
+    .addToCart{
+      min-width: 52ch;
+    }
+  }
+    @media (max-width: 480px) {
+      .addToCart{
+        min-width: 22ch;
+      }
+  
+
+  }

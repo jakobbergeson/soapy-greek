@@ -5,11 +5,15 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { StoreContext } from "../context/store-context"
 import { CartButton } from "./cart.button"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faBars } from "@fortawesome/free-solid-svg-icons"
 import { Toast } from "./toast"
 import About from "./about"
 
 const Header = ({ siteTitle }) => {
- 
+
+  const [open, setOpen]=React.useState(false)
+
   const { checkout, loading, didJustAddToCart } = React.useContext(StoreContext)
 
   const items = checkout ? checkout.lineItems : []
@@ -19,25 +23,32 @@ const Header = ({ siteTitle }) => {
   }, 0)
 
   return(
-    <>
-  <div
-    className = "header-wrapper">
-      <h1 className="icon">
-        <Link to="/">{siteTitle}</Link>
+  <div className = "header-wrapper">
+      <h1 className = "icon">
+        <Link to = "/">{siteTitle}</Link>
       </h1>
-        <ul className="header-list">
+        <ul className = {open ? "drop-menu" : "header-list"}>
           <li>
-            <Link to="/about">Projects</Link>
+            <Link to = "/about">Projects</Link>
           </li>
           <li>
-            <Link to="/products/">Store</Link>
+            <Link to = "/products/">Store</Link>
           </li>
           <li>
             <About/>
           </li>
         </ul>
-          <CartButton quantity={quantity} />
-          <Toast show={loading || didJustAddToCart}>
+          <CartButton quantity = {quantity} />
+          <button className="dropdown-btn" onClick={()=>{setOpen(!open)}} open={open} >
+            <FontAwesomeIcon 
+            icon={faBars} 
+            className = {open ? "rotate" :  "dropdown-icon"}
+            style ={{
+                transition: "all 300ms ease-in-out"
+            }}
+            />
+        </button> 
+          <Toast show = {loading || didJustAddToCart} >
           {!didJustAddToCart ? (
             "Updating…"
           ) : (
@@ -66,7 +77,6 @@ const Header = ({ siteTitle }) => {
           )}
         </Toast>
   </div>
-        </>
   )
 }
 
