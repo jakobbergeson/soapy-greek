@@ -3,10 +3,11 @@
   justify-content: flex-end;
   position: absolute;
   right:1%;
+  transition: all 300ms ease-in-out;
 }
 
 .cartButton {
-  color: var(--text-color-secondary);
+  color: inherit;
   grid-area: cartButton;
   width: var(--size-input);
   height: var(--size-input);
@@ -42,4 +43,12 @@
 
 .cartButton[aria-current="page"] {
   color: var(--primary);
+}
+
+@media screen and (max-width: 991px){
+  .cartButtonWrapper{
+    position:static;
+    margin-right:30px;
+    margin-left: auto;
+  }
 }

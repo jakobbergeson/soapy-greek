@@ -1,8 +1,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { GatsbyImage, getImage} from "gatsby-plugin-image"
+import { getImage } from "gatsby-plugin-image"
 import { graphql,  useStaticQuery } from "gatsby"
-
+import { convertToBgImage } from "gbimage-bridge"
+import BackgroundImage from 'gatsby-background-image'
 
 
 const AboutHero = () => {
@@ -25,21 +26,20 @@ const AboutHero = () => {
 
   const image = getImage(data.allContentfulAboutMeHero.edges[0].node.heroImage)
 
+  const bgImage = convertToBgImage(image)
   return (
 
-    <div className="story-hero">
+    <BackgroundImage 
+    className="story-hero"
+    {...bgImage}
+    preserveStackingContext
+    >
+    <div className="story-hero-title" >
+    <div className="title-line" />
     <h1>{data.allContentfulAboutMeHero.edges[0].node.heroSentence}</h1>
-    <GatsbyImage 
-    image={image} 
-    alt={data.allContentfulAboutMeHero.edges[0].node.heroImage.title} 
-    style={{
-    zIndex: "-1",
-    position: "absolute",
-    top: "0",
-    left:"0"
-    }}
-    />
+    <div className="title-line" />
     </div>
+    </BackgroundImage>
   )
 }
 

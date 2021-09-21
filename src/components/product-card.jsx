@@ -17,7 +17,6 @@ export function ProductCard({ product, eager }) {
     priceRangeV2,
     slug,
     images: [firstImage],
-    vendor,
     storefrontImages,
   } = product
 
@@ -42,7 +41,7 @@ export function ProductCard({ product, eager }) {
       console.error(e)
     }
   }
-
+  
   const hasImage = firstImage || Object.getOwnPropertyNames(storefrontImageData || {}).length
 
   return (
