@@ -15,7 +15,7 @@
   gap: var(--space-sm);
   min-width: 100px;
   justify-content: center;
-  z-index: 10;
+  z-index: 200;
   white-space: nowrap;
 }
 
