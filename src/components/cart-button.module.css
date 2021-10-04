@@ -4,6 +4,7 @@
   position: absolute;
   right:1%;
   transition: all 300ms ease-in-out;
+  z-index: 200;
 }
 
 .cartButton {

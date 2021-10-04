@@ -27,7 +27,7 @@ const Header = ({ siteTitle }) => {
       <h1 className = "icon">
         <Link to = "/">{siteTitle}</Link>
       </h1>
-        <ul className = {open ? "drop-menu" : "header-list"}>
+        <ul className = {open ? "header-list drop-menu" : "header-list"}>
           <li>
             <Link to = "/about">Projects</Link>
           </li>

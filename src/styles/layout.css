@@ -8,6 +8,13 @@ html {
   padding: 0;
   overflow-x: hidden;
 }
+
+main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -110,6 +117,7 @@ fieldset {
 }
 
 .header-list{
+  
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
@@ -135,6 +143,7 @@ fieldset {
 
 .footer-wrapper {
   display: flex;
+  flex-shrink: 0;
   padding-top: 0px;
   padding-bottom: 0px;
   flex-direction: column;
@@ -434,7 +443,7 @@ flex-direction: column;
   margin: 10px;
   padding: 15px 15px;
   justify-content: space-around;
-  transition: transform 200ms 
+  transition: transform 200ms, 
   cubic-bezier(0.345, 0.115, 0.135, 1.42),
   opacity 150ms ease-out,
   background-color 200ms ease-out;
@@ -615,15 +624,32 @@ ul li {
     border-style: none;
     background-color: inherit;
     color: rgb(51, 51, 51);
+    z-index: 200;
   }
 
   .header-wrapper {
-    height: 71px;
+    height: 73px;
+    border-bottom-style: none;
   }
 
   .header-list {
-   display:none;
-   font-weight: 900;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  left: 0;
+  top: calc(-100% + 1px);
+  opacity:1;
+  z-index: 100;
+  font-weight: 900;
+  transform: translateY(0);
+  transition: opacity 300ms, cubic-bezier(0.345, 0.115, 0.135, 1.42) ease 0s, transform 300ms ease 0s;
+  pointer-events: none;
+  width: 100%;
+  background-color:inherit;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #dde1e7;
   }
 
   .header-list li a {
@@ -631,14 +657,11 @@ ul li {
   }
 
   .drop-menu {
-    display: block;
-    position: absolute;
-    top: 68px;
-    width: 100%;
-    background-color:inherit;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    border-bottom-color: #dde1e7;
+    pointer-events:fill;
+    opacity: 1;
+    transform: translateY(99%);
+   
+   
   }
 
   .drop-menu a:hover {
@@ -648,6 +671,7 @@ ul li {
 
   .rotate {
     transform: rotate(180deg);
+    transition: tranform 150ms ease-in;
     color:var(--purple-70);
   }
 
@@ -665,6 +689,17 @@ ul li {
     grid-template-columns: 1fr;
   }
   
+
+}
+
+@media screen and (max-width: 770px) {
+
+  .post {
+    margin: 1rem 0 1rem 0;
+  }
+
+  .posts {
+    padding-inline-end: 40px;  }
 
 }
 
@@ -695,16 +730,6 @@ ul li {
 
 }
 
-@media screen and (max-width: 770px) {
-
-  .post {
-    margin: 1rem 0 1rem 0;
-  }
-
-  .posts {
-    padding-inline-end: 40px;  }
-
-}
 
 
 @media screen and (max-width: 479px) {
