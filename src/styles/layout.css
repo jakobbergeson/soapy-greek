@@ -1,18 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
 
-html {
+html, body {
   background: rgb(246,246,246);
   width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
   overflow-x: hidden;
 }
 
-main {
+#gatsby-focus-wrapper {
   height: 100%;
+  width: 100%;
+}
+
+#___gatsby {
+  height: 100%;
+  width: 100%;
+}
+
+article {
+  min-height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
+}
+
+main {
+  flex-grow: 1;
+  flex-shrink: 0;
 }
 
 a {
@@ -106,6 +120,7 @@ fieldset {
   display: flex;
   justify-content: center;
   top: 0;
+  height: 80px;
   z-index: 200;
   background-color: #f6f6f6;
   padding: 10px;
@@ -117,7 +132,6 @@ fieldset {
 }
 
 .header-list{
-  
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
@@ -133,11 +147,18 @@ fieldset {
 
 .icon {
   position: absolute;
-  left: 0%;
-  top: 0%;
-  margin: 5px;
+  left: 100px;
+  top: 0px;
   z-index: 500;
   min-width:max-content;
+}
+
+.icon a {
+  padding: 0px;
+}
+
+.icon a:hover{
+  background-color: transparent;
 }
 
 
@@ -278,6 +299,7 @@ fieldset {
   margin: 0 0 2% 0;
   height: 380px;
   background-position: 50% 70%;
+  z-index: 100;
 }
 
 .story-hero h1{
@@ -289,6 +311,7 @@ fieldset {
   display:flex;
   flex-direction: row;
   align-items: center;
+  z-index: 200;
 }
 
 .title-line {
@@ -472,17 +495,29 @@ flex-direction: column;
 
 .posts {
   list-style-type: none;
-  display:flex;
+  display: flex;
   flex-direction: column;
 }
 
 .post {
   margin: 1rem 20% 1rem 20%;
+  display: block;
+}
+
+.post-date {
+  display:flex;
+  align-items: center;
+  background-color: rgb(238, 232, 243);
+  z-index: 150;
+  height: 50px;
+  margin: .5rem;
+  padding: 9px;
 }
 
 .post a {
   background: inherit;
-  display: block;
+  display: grid;
+  grid-template-columns: .7fr 1fr;
   padding: 1rem;
   transition: color 300ms;
 }
@@ -493,7 +528,18 @@ flex-direction: column;
   background-color: rgb(238, 232, 243);
 }
 
-.post h2 {
+.post-picture {
+  display: inline-flex;
+  z-index: 100;
+}
+
+.post-preview {
+  display: block;
+  padding: 1rem;
+  background-color: rgb(238, 232, 243);
+}
+
+.post h3 {
   margin-bottom: 0;
 }
 
@@ -629,27 +675,25 @@ ul li {
 
   .header-wrapper {
     height: 73px;
-    border-bottom-style: none;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #dde1e7;
+    z-index: 200;
   }
 
   .header-list {
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: block;
   left: 0;
-  top: calc(-100% + 1px);
-  opacity:1;
+  top: calc(-100%);
   z-index: 100;
   font-weight: 900;
-  transform: translateY(0);
-  transition: opacity 300ms, cubic-bezier(0.345, 0.115, 0.135, 1.42) ease 0s, transform 300ms ease 0s;
+  transform: translateY(-98.5%);
+  transition: opacity 100ms ease-in, cubic-bezier(0.345, 0.115, 0.135, 1.42) ease, 
+  transform 400ms ease 0s;
   pointer-events: none;
   width: 100%;
   background-color:inherit;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: #dde1e7;
   }
 
   .header-list li a {
@@ -659,9 +703,10 @@ ul li {
   .drop-menu {
     pointer-events:fill;
     opacity: 1;
-    transform: translateY(99%);
-   
-   
+    transform: translateY(98.5%);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #dde1e7;
   }
 
   .drop-menu a:hover {
