@@ -1,12 +1,12 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import * as React from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import { Link } from "gatsby"
-import Social from "./social"
-import About from "../components/about"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faSoap } from "@fortawesome/free-solid-svg-icons"
+import { jsx } from "theme-ui";
+import * as React from "react";
+import { graphql, useStaticQuery } from "gatsby";
+import { Link } from "gatsby";
+import Social from "./social";
+import About from "../components/about";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSoap } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -17,7 +17,7 @@ const Footer = () => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <>
@@ -41,12 +41,12 @@ const Footer = () => {
               </li>
               <li>
                 <h5>
-                  <Link to="/store">Store</Link>
+                  <Link to="/products/">Store</Link>
                 </h5>
               </li>
               <li>
                 <h5>
-                  <About/>
+                  <About />
                 </h5>
               </li>
             </ul>
@@ -56,21 +56,21 @@ const Footer = () => {
               icon={faSoap}
               size="5x"
               spin
-              style={{color: "rgb(73, 4, 143)"}}
+              style={{ color: "rgb(73, 4, 143)" }}
             />
           </div>
         </div>
-      </div>
-      <div className="footer-notes">
-        <div className="footer-notes-template">
-          <div className="copyright-text">
-            © 2021 <span>{data.site.siteMetadata.title}</span>. All rights
-            reserved.
+        <div className="footer-notes">
+          <div className="footer-notes-template">
+            <div className="copyright-text">
+              © 2021 <span>{data.site.siteMetadata.title}</span>. All rights
+              reserved.
+            </div>
           </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
