@@ -66,9 +66,11 @@ const Blog = () => {
                 </BackgroundImage>
                 <div className="post-preview">
                   <h3>{node.title}</h3>
-                  <div>
-                    {renderRichText(node.body, body)[0]}
-                  </div>
+                  {renderRichText(node.body, body)[0]}
+                  <div className="title-line stretch"></div>
+                  <h5 className="arrow"
+                  >Read More
+                  </h5>
                 </div>
               </Link>
             </li>
