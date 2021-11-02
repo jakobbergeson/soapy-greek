@@ -1,9 +1,9 @@
-import * as React from "react"
-import { Link } from "gatsby"
-import Layout  from "../components/layout"
-import { StoreContext } from "../context/store-context"
-import { LineItem } from "../components/line-item"
-import { formatPrice } from "../utils/format-price"
+import * as React from "react";
+import { Link } from "gatsby";
+import Layout from "../components/layout";
+import { StoreContext } from "../context/store-context";
+import { LineItem } from "../components/line-item";
+import { formatPrice } from "../utils/format-price";
 import {
   table,
   wrap,
@@ -19,15 +19,15 @@ import {
   emptyStateHeading,
   emptyStateLink,
   title,
-} from "./cart.module.css"
+} from "./cart.module.css";
 
 export default function CartPage() {
-  const { checkout, loading } = React.useContext(StoreContext)
-  const emptyCart = checkout.lineItems.length === 0
+  const { checkout, loading } = React.useContext(StoreContext);
+  const emptyCart = checkout.lineItems.length === 0;
 
   const handleCheckout = () => {
-    window.open(checkout.webUrl)
-  }
+    window.open(checkout.webUrl);
+  };
 
   return (
     <Layout>
@@ -37,7 +37,7 @@ export default function CartPage() {
             <h1 className={emptyStateHeading}>Your cart is empty</h1>
             <p>
               Looks like you haven’t found anything yet. We understand that
-              sometimes it’s hard to chose — maybe this helps:
+              sometimes it’s hard to choose — maybe this helps:
             </p>
             <Link to="/products/" className={emptyStateLink}>
               View products
@@ -117,5 +117,5 @@ export default function CartPage() {
         )}
       </div>
     </Layout>
-  )
+  );
 }
