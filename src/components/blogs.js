@@ -30,7 +30,6 @@ const Blog = () => {
 
   return (
     <div className="posts-wrapper">
-      <h1>Blog</h1>
       <ol className="posts">
         {data.allContentfulBlogPost.edges.map(({ node }) => {
 

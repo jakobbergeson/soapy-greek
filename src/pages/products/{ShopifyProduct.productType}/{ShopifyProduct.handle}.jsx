@@ -1,12 +1,13 @@
-import * as React from "react"
-import { graphql, Link } from "gatsby"
-import  Layout  from "../../../components/layout"
-import isEqual from "lodash.isequal"
-import { GatsbyImage, getSrc } from "gatsby-plugin-image"
-import { StoreContext } from "../../../context/store-context"
-import { AddToCart } from "../../../components/add-to-cart"
-import { NumericInput } from "../../../components/numeric-input"
-import { formatPrice } from "../../../utils/format-price"
+import * as React from "react";
+import { graphql, Link } from "gatsby";
+import Layout from "../../../components/layout";
+import Head from "../../../components/head";
+import isEqual from "lodash.isequal";
+import { GatsbyImage, getSrc } from "gatsby-plugin-image";
+import { StoreContext } from "../../../context/store-context";
+import { AddToCart } from "../../../components/add-to-cart";
+import { NumericInput } from "../../../components/numeric-input";
+import { formatPrice } from "../../../utils/format-price";
 import {
   productBox,
   container,
@@ -20,7 +21,7 @@ import {
   productDescription,
   productImage,
   productDescriptionWrapper,
-} from "./product-page.module.css"
+} from "./product-page.module.css";
 
 export default function Product({ data: { product, suggestions } }) {
   const {
@@ -32,19 +33,19 @@ export default function Product({ data: { product, suggestions } }) {
     description,
     images,
     images: [firstImage],
-  } = product
+  } = product;
 
-  const { client } = React.useContext(StoreContext)
+  const { client } = React.useContext(StoreContext);
 
-  const [variant, setVariant] = React.useState({ ...initialVariant })
-  const [quantity, setQuantity] = React.useState(1)
-  
+  const [variant, setVariant] = React.useState({ ...initialVariant });
+  const [quantity, setQuantity] = React.useState(1);
+
   const productVariant =
-  client.product.helpers.variantForOptions(product, variant) || variant
-  
+    client.product.helpers.variantForOptions(product, variant) || variant;
+
   const [available, setAvailable] = React.useState(
     productVariant.availableForSale
-    )
+  );
 
   const checkAvailablity = React.useCallback(
     (productId) => {
@@ -52,64 +53,65 @@ export default function Product({ data: { product, suggestions } }) {
         const result =
           fetchedProduct?.variants.filter(
             (variant) => variant.id === productVariant.storefrontId
-          ) ?? []
+          ) ?? [];
 
         if (result.length > 0) {
-          setAvailable(result[0].available)
+          setAvailable(result[0].available);
         }
-      })
+      });
     },
     [productVariant.storefrontId, client.product]
-  )
+  );
 
-  
+
   const handleOptionChange = (index, event) => {
-    const value = event.target.value
-    
+    const value = event.target.value;
+
     if (value === "") {
-      return
+      return;
     }
-    
-    const currentOptions = [...variant.selectedOptions]
-    
+
+    const currentOptions = [...variant.selectedOptions];
+
     currentOptions[index] = {
       ...currentOptions[index],
       value,
-    }
-    
+    };
+
     const selectedVariant = variants.find((variant) => {
-      return isEqual(currentOptions, variant.selectedOptions)
-    })
-    
-    setVariant({ ...selectedVariant })
-  }
+      return isEqual(currentOptions, variant.selectedOptions);
+    });
+
+    setVariant({ ...selectedVariant });
+  };
 
   React.useEffect(() => {
-    checkAvailablity(product.storefrontId)
-  }, [productVariant.storefrontId, checkAvailablity, product.storefrontId])
+    checkAvailablity(product.storefrontId);
+  }, [productVariant.storefrontId, checkAvailablity, product.storefrontId]);
 
   const price = formatPrice(
     priceRangeV2.minVariantPrice.currencyCode,
     variant.price
-  )
+  );
 
-  const hasVariants = variants.length > 1
-  const hasImages = images.length > 0
+  const hasVariants = variants.length > 1;
+  const hasImages = images.length > 0;
 
   return (
     <Layout>
+      <Head title={title} />
       <div className={container}>
         <div className={productBox}>
-            <div className={productImageWrapper}>
-              <GatsbyImage
-                className= {productImage}
-                objectFit="contain"
-                loading="eager"
-                alt={variant.title}
-                image={variant.image.gatsbyImageData}
-              />
-            </div>
-          
+          <div className={productImageWrapper}>
+            <GatsbyImage
+              className={productImage}
+              objectFit="contain"
+              loading="eager"
+              alt={variant.title}
+              image={variant.image.gatsbyImageData}
+            />
+          </div>
+
           {!hasImages && (
             <span className={noImagePreview}>No Preview image</span>
           )}
@@ -157,7 +159,7 @@ export default function Product({ data: { product, suggestions } }) {
         </div>
       </div>
     </Layout>
-  )
+  );
 }
 
 export const query = graphql`
@@ -214,4 +216,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
