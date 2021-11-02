@@ -1,16 +1,18 @@
-import * as React from "react"
-import { graphql } from "gatsby"
-import  Layout  from "../../../components/layout"
-import { ProductListing } from "../../../components/product-listing"
+import * as React from "react";
+import { graphql } from "gatsby";
+import Layout from "../../../components/layout";
+import Head from "../../../components/head";
+import { ProductListing } from "../../../components/product-listing";
 
 export default function Products({
   data: { products }
 }) {
   return (
     <Layout>
+      <Head title={'Store'} />
       <ProductListing products={products.nodes} />
     </Layout>
-  )
+  );
 }
 
 export const query = graphql`
@@ -28,4 +30,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
