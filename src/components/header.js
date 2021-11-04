@@ -25,7 +25,7 @@ const Header = ({ siteTitle }) => {
 
   return (
     <div className="header-wrapper">
-      <div className="icon">
+      <figure className="icon">
         <Link to="/">
           <StaticImage
             src="../images/Logo-clear.png"
@@ -33,7 +33,7 @@ const Header = ({ siteTitle }) => {
             width={160}
           />
         </Link>
-      </div>
+      </figure>
       <ul className={open ? "header-list drop-menu" : "header-list"}>
         <li>
           <Link to="/about">Projects</Link>
