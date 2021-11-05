@@ -363,7 +363,7 @@ fieldset {
 .story-wrapper h2 {
 margin-left: auto;
 margin-right: auto;
-animation: slide-fade-in .5s ease;
+animation: grow .7s ease;
 }
 
 .story-wrapper p {

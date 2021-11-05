@@ -1,14 +1,24 @@
 .wrapper {
-  background-color: aqua;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #dde1e7;
+  text-align: center;
 }
+
+.description {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.picture {
+  margin: 0;
+}
+
 .title {
   font-size: var(--text-2xl);
   font-weight: var(--semibold);
   line-height: var(--solid);
   padding-bottom: var(--space-md);
+  display: inline-flex;
 }
 
 .variant {
@@ -18,29 +28,47 @@
 }
 
 .remove button {
-  font-size: var(--text-md);
-  border-style: none;
+  font-size: var(--text-lg);
+  height: var(--size-input);
+  width: 6ch;
   display: inline-flex;
-  align-items: center;
+ justify-content: center;
+ align-items: center;
+ border-style: solid;
+  border-width: 1px;
+  border-color: #d8d8d8;
+  border-radius: var(--radius-md);
   background-color: transparent;
   cursor: pointer;
 }
 
-.remove button:hover {
-  opacity: .5;
-}
-
-.remove button svg {
-  margin-right: var(--space-md);
+.remove button:hover > svg {
+  animation: shake .82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
 }
 
 .totals {
-  text-align: right;
+  text-align: center;
 }
 
 .priceColumn,
 .totals {
   display: none;
+}
+
+@keyframes shake {
+	10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
 
 @media (min-width: 640px) {

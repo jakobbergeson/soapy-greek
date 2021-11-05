@@ -7,11 +7,13 @@ import { getShopifyImage } from "gatsby-source-shopify";
 import DeleteIcon from "../icons/delete";
 import { NumericInput } from "./numeric-input";
 import {
-  title,
+  wrapper,
   remove,
   variant,
+  description,
+  picture,
   totals,
-  priceColumn,
+  quantity
 } from "./line-item.module.css";
 
 export function LineItem({ item }) {
@@ -27,6 +29,7 @@ export function LineItem({ item }) {
     ...item.variant.image,
     originalSrc: item.variant.image.src,
   };
+
   const price = formatPrice(
     item.variant.priceV2.currencyCode,
     Number(item.variant.priceV2.amount)
@@ -80,29 +83,26 @@ export function LineItem({ item }) {
   );
 
   return (
-    <tr classname="wrapper">
+    <tr className={wrapper}>
       <td>
-        {image && (
-          <GatsbyImage
-            key={variantImage.src}
-            image={image}
-            alt={variantImage.altText ?? item.variant.title}
-          />
-        )}
-      </td>
-      <td>
-        <h2 className={title}>{item.title}</h2>
-        <div className={variant}>
-          {item.variant.title === "Default Title" ? "" : item.variant.title}
-        </div>
-        <div className={remove}>
-          <button onClick={handleRemove}>
-            <DeleteIcon /> Remove
-          </button>
+        <div className={description}>
+          {image && (
+            <div className={picture}>
+              <GatsbyImage
+                key={variantImage.src}
+                image={image}
+                alt={variantImage.altText ?? item.variant.title}
+              />
+            </div>
+          )}
+          <div className={variant}>
+            <h3>{item.title}</h3>
+            {item.variant.title === "Default Title" ? "" : item.variant.title}
+          </div>
         </div>
       </td>
-      <td className={priceColumn}>{price}</td>
-      <td>
+
+      <td className={quantity}>
         <NumericInput
           disabled={loading}
           value={quantity}
@@ -112,7 +112,14 @@ export function LineItem({ item }) {
           onChange={(e) => handleQuantityChange(e.currentTarget.value)}
         />
       </td>
-      <td className={totals}>{subtotal}</td>
+      <td>
+        <div className={remove}>
+          <button onClick={handleRemove}>
+            <DeleteIcon />
+          </button>
+        </div>
+      </td>
+      <td><h3>{subtotal}</h3></td>
     </tr>
   );
 }
