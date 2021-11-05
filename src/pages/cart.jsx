@@ -6,20 +6,14 @@ import { StoreContext } from "../context/store-context";
 import { LineItem } from "../components/line-item";
 import { formatPrice } from "../utils/format-price";
 import {
-  table,
   wrap,
-  totals,
-  grandTotal,
-  summary,
+  title,
+  container,
+  table,
   checkoutButton,
-  collapseColumn,
-  labelColumn,
-  imageHeader,
-  productHeader,
   emptyStateContainer,
   emptyStateHeading,
   emptyStateLink,
-  title,
 } from "./cart.module.css";
 
 export default function CartPage() {
@@ -46,62 +40,38 @@ export default function CartPage() {
           </div>
         ) : (
           <>
-            <h1 className={title}>My Shopping Cart</h1>
-            <table className={table}>
-              <thead>
-                <tr>
-                  <th className={imageHeader}>Image</th>
-                  <th className={productHeader}>Description</th>
-                  <th className={collapseColumn}>Price</th>
-                  <th>Quantity</th>
-                  <th className={[totals, collapseColumn].join(" ")}>Price</th>
-                </tr>
-              </thead>
-              <tbody>
-                {checkout.lineItems.map((item) => (
-                  <LineItem item={item} key={item.id} />
-                ))}
+            <h1 className={title}>Shopping Cart</h1>
+            <div className={container}>
+              <table className={table}>
+                <thead>
+                  <tr>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Remove</th>
+                    <th>Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {checkout.lineItems.map((item) => (
+                    <LineItem item={item} key={item.id} />
+                  ))}
+                </tbody>
+              </table>
+              <div>
+                <h2> Shipping & taxes Calculated at checkout</h2>
 
-                <tr className={summary}>
-                  <td className={collapseColumn}></td>
-                  <td className={collapseColumn}></td>
-                  <td className={collapseColumn}></td>
-                  <td className={labelColumn}>Subtotal</td>
-                  <td className={totals}>
-                    {formatPrice(
-                      checkout.subtotalPriceV2.currencyCode,
-                      checkout.subtotalPriceV2.amount
-                    )}
-                  </td>
-                </tr>
-                <tr className={summary}>
-                  <td className={collapseColumn}></td>
-                  <td className={collapseColumn}></td>
-                  <td className={collapseColumn}></td>
-                  <td className={labelColumn}>Shipping</td>
-                  <td className={totals}>Calculated at checkout</td>
-                </tr>
-                <tr className={grandTotal}>
-                  <td className={collapseColumn}></td>
-                  <td className={collapseColumn}></td>
-                  <td className={collapseColumn}></td>
-                  <td className={labelColumn}>Total Price</td>
-                  <td className={totals}>
-                    {formatPrice(
-                      checkout.totalPriceV2.currencyCode,
-                      checkout.totalPriceV2.amount
-                    )}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <button
-              onClick={handleCheckout}
-              disabled={loading}
-              className={checkoutButton}
-            >
-              Checkout
-            </button>
+                <button
+                  onClick={handleCheckout}
+                  disabled={loading}
+                  className={checkoutButton}
+                >
+                  Checkout • {formatPrice(
+                    checkout.subtotalPriceV2.currencyCode,
+                    checkout.subtotalPriceV2.amount
+                  )}
+                </button>
+              </div>
+            </div>
           </>
         )}
       </div>

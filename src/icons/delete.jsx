@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 
 function DeleteIcon(props) {
   return (
@@ -29,7 +29,7 @@ function DeleteIcon(props) {
         strokeWidth={2}
       />
     </svg>
-  )
+  );
 }
 
-export default DeleteIcon
+export default DeleteIcon;

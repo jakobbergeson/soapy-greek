@@ -6,10 +6,6 @@
   border-radius: var(--radius-md);
   height: var(--size-input);
   overflow: hidden;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #d8d8d8;
-  
 }
 
 .input {
@@ -19,9 +15,9 @@
   align-self: stretch;
   width: 6ch;
   border-style: solid;
-  border-color: var(--input-border);
+  border-width: 1px;
+  border-color: #d8d8d8;
   text-align: center;
-  border-width: 0 1px;
   font-weight: var(--medium);
   color: var(--input-text);
 }
@@ -40,16 +36,13 @@
   place-items: center;
   color: var(--input-ui);
   cursor: pointer;
+  text-align: center;
   transition: all .2s cubic-bezier(.23,1,.32,1);
 }
 
 .wrap button span {
   display: inline;
 }
-
-/* .wrap button:hover {
-  box-shadow: var(--shadow);
-} */
 
 .wrap button.increment {
   grid-area: increment;
