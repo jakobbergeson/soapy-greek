@@ -46,15 +46,15 @@ export default function CartPage() {
           </div>
         ) : (
           <>
-            <h1 className={title}>Cart</h1>
+            <h1 className={title}>My Shopping Cart</h1>
             <table className={table}>
               <thead>
                 <tr>
                   <th className={imageHeader}>Image</th>
-                  <th className={productHeader}>Product</th>
+                  <th className={productHeader}>Description</th>
                   <th className={collapseColumn}>Price</th>
-                  <th>Qty.</th>
-                  <th className={[totals, collapseColumn].join(" ")}>Total</th>
+                  <th>Quantity</th>
+                  <th className={[totals, collapseColumn].join(" ")}>Price</th>
                 </tr>
               </thead>
               <tbody>
@@ -71,18 +71,6 @@ export default function CartPage() {
                     {formatPrice(
                       checkout.subtotalPriceV2.currencyCode,
                       checkout.subtotalPriceV2.amount
-                    )}
-                  </td>
-                </tr>
-                <tr className={summary}>
-                  <td className={collapseColumn}></td>
-                  <td className={collapseColumn}></td>
-                  <td className={collapseColumn}></td>
-                  <td className={labelColumn}>Taxes</td>
-                  <td className={totals}>
-                    {formatPrice(
-                      checkout.totalTaxV2.currencyCode,
-                      checkout.totalTaxV2.amount
                     )}
                   </td>
                 </tr>
