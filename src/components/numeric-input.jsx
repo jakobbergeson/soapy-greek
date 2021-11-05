@@ -1,6 +1,6 @@
-import * as React from "react"
-import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md"
-import { wrap, increment, decrement, input } from "./numeric-input.module.css"
+import * as React from "react";
+import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
+import { wrap, increment, decrement, input } from "./numeric-input.module.css";
 export function NumericInput({
   onIncrement,
   onDecrement,
@@ -18,22 +18,20 @@ export function NumericInput({
       />
       <button
         disabled={disabled}
-        className={increment}
-        aria-label="Increment"
-        onClick={onIncrement}
-      >
-        <span>+</span>
-        <MdArrowDropUp />
-      </button>
-      <button
-        disabled={disabled}
         className={decrement}
         aria-label="Decrement"
         onClick={onDecrement}
       >
         <span>-</span>
-        <MdArrowDropDown />
+      </button>
+      <button
+        disabled={disabled}
+        className={increment}
+        aria-label="Increment"
+        onClick={onIncrement}
+      >
+        <span>+</span>
       </button>
     </div>
-  )
+  );
 }

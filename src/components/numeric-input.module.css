@@ -1,27 +1,27 @@
 .wrap {
   display: inline-grid;
-  grid-template-columns: 1fr min-content;
-  grid-template-areas: "input increment" "input decrement";
-  background-color: var(--input-background);
+  grid-template-columns: var(--size-input) 1fr var(--size-input);
+  grid-template-areas: "increment input decrement ";
+  color: var(--input-color);
   border-radius: var(--radius-md);
   height: var(--size-input);
   overflow: hidden;
-}
-
-.wrap button span {
-  display: none;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d8d8d8;
+  
 }
 
 .input {
   grid-area: input;
   background: none;
-  border: none;
-  padding: var(--space-sm) var(--space-lg);
+  padding: var(--space-sm) var(--space-xlg);
   align-self: stretch;
   width: 6ch;
   border-style: solid;
   border-color: var(--input-border);
-  border-width: 0 1px 0 0;
+  text-align: center;
+  border-width: 0 1px;
   font-weight: var(--medium);
   color: var(--input-text);
 }
@@ -33,70 +33,41 @@
 .wrap button {
   background: none;
   border: none;
-  padding: 0 var(--space-sm);
+  padding: 0 var(--space-md);
+  font-size: var(--text-lg);
+  font-weight: var(--bold);
   display: grid;
   place-items: center;
   color: var(--input-ui);
+  cursor: pointer;
+  transition: all .2s cubic-bezier(.23,1,.32,1);
 }
 
-.wrap button:hover {
-  background-color: var(--input-background-hover);
-  color: var(--input-ui-active);
+.wrap button span {
+  display: inline;
 }
 
-.wrap button:disabled:hover,
-.wrap button:disabled {
-  background: none;
-  color: var(--input-text-disabled);
-}
+/* .wrap button:hover {
+  box-shadow: var(--shadow);
+} */
 
 .wrap button.increment {
   grid-area: increment;
-  border-bottom: 1px var(--input-border) solid;
+  color:white;
+  background-color: var(--purple-70);
+}
+
+.wrap button.decrement {
+  grid-area: decrement;
+  color:var(--grey-90);
+  background-color: var(--grey-30);
+}
+
+.wrap button:active {
+ transform: scale(.8);
+ border-radius: var(--radius-md);
 }
 
 .decrement {
   grid-area: decrement;
-}
-
-/* On mobile, make the buttons easier to press */
-@media (pointer: coarse) {
-  .wrap {
-    grid-template-columns: var(--size-input) 1fr var(--size-input);
-    grid-template-areas: "decrement input increment";
-    color: var(--input-color);
-  }
-
-  .input {
-    text-align: center;
-    border-width: 0 1px;
-  }
-
-  .wrap button {
-    padding: 0 var(--space-md);
-    font-size: var(--text-lg);
-    font-weight: var(--bold);
-  }
-
-  .wrap button span {
-    display: inline;
-  }
-
-  .wrap button svg {
-    display: none;
-  }
-
-  .wrap button.increment {
-    border: none;
-  }
-
-  .wrap button:active {
-    background-color: var(--input-background-hover);
-    color: var(--input-ui-active);
-  }
-
-  .wrap button:hover {
-    background-color: inherit;
-    color: inherit;
-  }
 }

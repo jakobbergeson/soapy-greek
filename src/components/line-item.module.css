@@ -1,3 +1,9 @@
+.wrapper {
+  background-color: aqua;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #dde1e7;
+}
 .title {
   font-size: var(--text-2xl);
   font-weight: var(--semibold);
