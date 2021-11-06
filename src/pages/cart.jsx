@@ -10,6 +10,8 @@ import {
   title,
   container,
   table,
+  checkoutBox,
+  shipping,
   checkoutButton,
   emptyStateContainer,
   emptyStateHeading,
@@ -57,8 +59,8 @@ export default function CartPage() {
                   ))}
                 </tbody>
               </table>
-              <div>
-                <h2> Shipping & taxes Calculated at checkout</h2>
+              <div className={checkoutBox}>
+                <h3 className={shipping}> Shipping & taxes Calculated at checkout</h3>
 
                 <button
                   onClick={handleCheckout}

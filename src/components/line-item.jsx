@@ -12,8 +12,8 @@ import {
   variant,
   description,
   picture,
-  totals,
-  quantity
+  mobile,
+  price,
 } from "./line-item.module.css";
 
 export function LineItem({ item }) {
@@ -101,7 +101,6 @@ export function LineItem({ item }) {
           </div>
         </div>
       </td>
-
       <td className={quantity}>
         <NumericInput
           disabled={loading}
@@ -119,7 +118,36 @@ export function LineItem({ item }) {
           </button>
         </div>
       </td>
-      <td><h3>{subtotal}</h3></td>
+      <td>
+        <p className={price}>
+          {subtotal}
+        </p>
+      </td>
+      <div className={mobile}>
+        <td className={quantity}>
+          <NumericInput
+            disabled={loading}
+            value={quantity}
+            aria-label="Quantity"
+            onIncrement={doIncrement}
+            onDecrement={doDecrement}
+            onChange={(e) => handleQuantityChange(e.currentTarget.value)}
+          />
+        </td>
+        <td>
+          <div className={remove}>
+            <button onClick={handleRemove}>
+              <DeleteIcon />
+            </button>
+          </div>
+        </td>
+        <td>
+          <p className={price}>
+            {subtotal}
+          </p>
+        </td>
+      </div>
+
     </tr>
   );
 }
