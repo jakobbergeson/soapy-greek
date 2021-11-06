@@ -39,7 +39,7 @@
 
 .table td:first-child {
   width: 30%;
-  min-width: 30%;
+  min-width: 25%;
   max-width: 30%;
 }
 
@@ -50,6 +50,19 @@
   font-weight: bold;
   padding-bottom: var(--space-2xl);
  
+}
+
+.checkoutBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  width: 100%;
+  margin: var(--space-2xl) 0;
+}
+
+.shipping {
+  margin: 0 auto;
+  color: var(--purple-70);
 }
 
 .checkoutButton {
@@ -64,15 +77,16 @@
   height: var(--size-input);
   justify-content: center;
   line-height: var(--solid);
-  margin: var(--space-3xl) auto var(--space-md);
+  margin: 0;
   padding: var(--space-sm) var(--space-3xl);
   width: max-content;
-  transition: var(--transition);
+  transition: var(--transition), color 150ms ease-out;
   cursor: pointer;
 }
 
 .checkoutButton:hover {
   box-shadow: var(--shadow);
+  color: goldenrod;
 }
 
 /* Apply only to first of class */
@@ -103,22 +117,64 @@
   font-size: var(--text-xl);
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 750px)  {
+  
+
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr { 
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+  }
+  
   .wrap {
+    /* max-width: fit-content; */
     margin: 16px;
   }
 
-  /* .collapseColumn {
-    display: block;
-  } */
-
-  /* .table {
-    grid-template-columns: 80px 1fr repeat(3, min-content);
+  /* Hide table headers (for accessibility) */
+  .table thead tr { 
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
   }
-}
+  
+  .table td { 
+    border: none;
+    font-size: medium;
+  }
+  
+  .title {
+    font-size: large;
+  }
+  
+  .container {
+    padding:  var(--space-2xl);
+  }
+  
+  .table th {
+    text-align:start;
+  }
+  
+  .shipping {
+    display: none;
+  }
 
-@media (min-width: 1024px) {
-  .table {
-    grid-template-columns: max-content 1fr repeat(3, max-content);
-  } */
+}
+@media screen and (max-width: 1200px) {
+  
+  .wrap {
+    max-width: fit-content;
+  }
+  
+  .container {
+    padding:  var(--space-xl); 
+  }
+  
+  .checkoutBox {
+    justify-content: center;
+  }
+  .shipping {
+    display: none;
+  }
 }

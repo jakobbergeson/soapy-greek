@@ -11,6 +11,7 @@
 
 .picture {
   margin: 0;
+  min-width: 120px;
 }
 
 .title {
@@ -47,14 +48,15 @@
   transform: translate3d(0, 0, 0);
 }
 
-.totals {
-  text-align: center;
-}
-
-.priceColumn,
-.totals {
+.mobile {
   display: none;
 }
+
+.price {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
 
 @keyframes shake {
 	10%, 90% {
@@ -71,9 +73,36 @@
   }
 }
 
-@media (min-width: 640px) {
-  .priceColumn,
-  .totals {
-    display: block;
+@media screen and (max-width: 750px)  {
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
   }
+
+.variant {
+  font-size: small;
+}
+
+.variant h3{
+  display: none;
+}
+
+.mobile {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.remove button {
+  width: fit-content;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.price {
+  font-size: small;
+}
+
 }
