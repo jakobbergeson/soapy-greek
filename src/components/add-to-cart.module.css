@@ -7,7 +7,9 @@
     padding: var(--space-sm) var(--space-xl);
     border:none;
     border-radius: var(--radius-md);
-    font-weight: var(--bold);
+    font-family: inherit;
+    font-size: var(--text-md);
+    font-weight: bolder;
     align-items: center;
     height: var(--size-input);
     justify-content: center;
@@ -19,12 +21,7 @@
     box-shadow: var(--shadow);
     transform: var(--transform);
   }
-
-  @media (max-width: 840px) {
-    .addToCart{
-      min-width: 52ch;
-    }
-  }
+  
     @media (max-width: 480px) {
       .addToCart{
         min-width: 22ch;

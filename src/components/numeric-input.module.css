@@ -64,24 +64,3 @@
 .decrement {
   grid-area: decrement;
 }
-
-@media screen and (max-width: 750px)  {
-  .wrap {
-    grid-template-columns: 1fr 1fr 1fr;
-
-    height: fit-content;
-    overflow: hidden;
-  }
-
-  .input {
-    padding: 0;
-    align-self: stretch;
-    width: 3ch;
-  }
-
-  .input {
-    padding: 0;
-    align-self: stretch;
-    width: 3ch;
-  }
-}
