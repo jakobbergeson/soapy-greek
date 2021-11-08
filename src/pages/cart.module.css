@@ -72,8 +72,9 @@
   border-style: none;
   color: var(--text-color-inverted);
   display: flex;
+  font-family: inherit;
   font-size: var(--text-md);
-  font-weight: var(--semibold);
+  font-weight: bolder;
   height: var(--size-input);
   justify-content: center;
   line-height: var(--solid);
@@ -128,8 +129,8 @@
   }
   
   .wrap {
-    /* max-width: fit-content; */
-    margin: 16px;
+    max-width: none;
+    margin: 16px auto;
   }
 
   /* Hide table headers (for accessibility) */
@@ -150,6 +151,7 @@
   
   .container {
     padding:  var(--space-2xl);
+    width: 100%;
   }
   
   .table th {

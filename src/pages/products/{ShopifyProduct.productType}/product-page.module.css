@@ -1,23 +1,34 @@
+
+.container {
+  padding: var(--size-gutter-raw);
+  flex-shrink: 0;
+  max-width: 1280vw;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+}
+
 .productBox {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: var(--space-3xl);
 }
 
-.container {
-  padding: var(--size-gutter-raw);
-  flex-shrink: 0;
-  max-width: 1280px;
-  margin-right: auto;
-  margin-left: auto;
-  display: flex;
-}
-
 .header {
+  display: flex;
+  justify-content: center;
   font-size: var(--text-display);
   font-weight: var(--bold);
   margin-bottom: var(--space-xl);
   line-height: var(--dense);
+}
+
+.productDescriptionWrapper {
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 25vw;
 }
 
 .productDescription {
@@ -42,6 +53,11 @@
   justify-content: center;
   min-height: 300px;
   font-size: var(--text-lg);
+}
+
+.priceValue {
+  display: flex;
+  justify-content: center;
 }
 
 .priceValue > span {
@@ -69,9 +85,9 @@
 
 .optionsWrapper {
   border: none;
-  display: grid;
-  grid-template-columns: var(--product-grid);
-  gap: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
   padding-bottom: var(--space-lg);
 }
 
@@ -118,14 +134,33 @@
   pointer-events: none;
 }
 
+@media (min-width: 1600px) {
+  .productDescriptionWrapper {
+    max-width: 20vw;
+  }
+}
+
+@media (max-width: 1200px) {
+  .productDescriptionWrapper {
+    max-width: 40vw;
+  }
+}
+
 @media (max-width: 840px) {
   .productBox {
     grid-template-columns: 1fr;
   }
-  .addToCartStyle {
-    grid-template-columns: min-content max-content;
+
+  .productDescriptionWrapper {
+    text-align: center;
+    max-width: 60vw;
   }
+
+  /* .addToCartStyle {
+    grid-template-columns: min-content max-content;
+  } */
 }
+
 
 @media (max-width: 480px) {
   
@@ -133,42 +168,43 @@
     padding: 0;
     margin: 10px 0
   }
-
+  
   .selectVariant {
     min-width: 17ch;
   }
-
+  
   .productImage {
     max-width: 320px;
     min-width: none;
   }
-
+  
   .productImageWrapper {
     justify-content: center;
     align-items: center;
   }
-
+  
   .productDescriptionWrapper {
     text-align: center;
+    max-width: none;
   }
-
+  
   .productDescription {
     margin: 0 10px;
   }
-
+  
   .optionsWrapper{
     margin: 0 10px 10px;
     display: block;
   }
-
+  
   .priceValue {
     padding: 0px;
   }
-
+  
   .addToCartStyle {
     display:flex;
     flex-direction: row;
     justify-content: space-evenly;
   }
-
+  
 }

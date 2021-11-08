@@ -12,8 +12,7 @@ import {
   variant,
   description,
   picture,
-  mobile,
-  price,
+  subPrice,
 } from "./line-item.module.css";
 
 export function LineItem({ item }) {
@@ -97,7 +96,7 @@ export function LineItem({ item }) {
           )}
           <div className={variant}>
             <h3>{item.title}</h3>
-            {item.variant.title === "Default Title" ? "" : item.variant.title}
+            <p> {item.variant.title === "Default Title" ? "" : item.variant.title} </p>
           </div>
         </div>
       </td>
@@ -119,35 +118,10 @@ export function LineItem({ item }) {
         </div>
       </td>
       <td>
-        <p className={price}>
+        <p className={subPrice}>
           {subtotal}
         </p>
       </td>
-      <div className={mobile}>
-        <td className={quantity}>
-          <NumericInput
-            disabled={loading}
-            value={quantity}
-            aria-label="Quantity"
-            onIncrement={doIncrement}
-            onDecrement={doDecrement}
-            onChange={(e) => handleQuantityChange(e.currentTarget.value)}
-          />
-        </td>
-        <td>
-          <div className={remove}>
-            <button onClick={handleRemove}>
-              <DeleteIcon />
-            </button>
-          </div>
-        </td>
-        <td>
-          <p className={price}>
-            {subtotal}
-          </p>
-        </td>
-      </div>
-
     </tr>
   );
 }
