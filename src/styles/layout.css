@@ -150,9 +150,10 @@ fieldset {
 
 .icon {
   position: absolute;
-  left: 100px;
-  top: 0px;
+  left: 0px;
+  top: -13px;
   z-index: 500;
+  width: 160px;
   animation: grow .7s cubic-bezier(.23,1,.32,1);
 }
 
@@ -741,9 +742,9 @@ ul li {
 
 @media screen and (max-width: 1280px){
 
-.slider-wrapper {
-  margin: 1rem;
-}
+  .slider-wrapper {
+    margin: 1rem;
+  }
 
 }
 @media screen and (max-width: 991px){
@@ -791,8 +792,13 @@ ul li {
   background-color:inherit;
   }
 
+  .header-list li {
+    margin: 0;
+  }
+
   .header-list li a {
     font-weight: 900;
+   text-align: center;
   }
 
   .drop-menu {
@@ -873,6 +879,12 @@ ul li {
 
   html {
     font-size: 100%;
+  }
+
+  .icon {
+    left: -35px;
+    top: -13px;
+    width: 110px;
   }
 
   .story-hero h1{

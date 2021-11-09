@@ -30,7 +30,6 @@ const Header = ({ siteTitle }) => {
           <StaticImage
             src="../images/Logo-clear.png"
             alt={siteTitle}
-            width={160}
           />
         </Link>
       </figure>
