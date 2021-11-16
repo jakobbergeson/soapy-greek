@@ -156,11 +156,7 @@
     max-width: 60vw;
   }
 
-  /* .addToCartStyle {
-    grid-template-columns: min-content max-content;
-  } */
 }
-
 
 @media (max-width: 480px) {
   

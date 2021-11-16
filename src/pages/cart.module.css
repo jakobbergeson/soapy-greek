@@ -170,7 +170,7 @@
   }
   
   .container {
-    padding:  var(--space-xl); 
+    padding: 0 var(--space-xl); 
   }
   
   .checkoutBox {
