@@ -49,7 +49,7 @@
 @media screen and (max-width: 435px) {
 
   .productHeadingStyle{
-    font-size: var(--text-sm);
+    font-size: var(--text-lg);
   }
-
+  
 }
