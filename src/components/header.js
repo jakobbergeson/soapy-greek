@@ -35,7 +35,7 @@ const Header = ({ siteTitle }) => {
       </figure>
       <ul className={open ? "header-list drop-menu" : "header-list"}>
         <li>
-          <Link to="/about">Projects</Link>
+          <Link to="/projects">Projects</Link>
         </li>
         <li>
           <Link to="/products/">Store</Link>

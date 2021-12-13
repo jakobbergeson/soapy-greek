@@ -35,6 +35,7 @@ const AboutHero = () => {
       preserveStackingContext
     >
       <div className="story-hero-title" >
+
         <div className="title-line" />
         <h1>{data.allContentfulAboutMeHero.edges[0].node.heroSentence}</h1>
         <div className="title-line" />

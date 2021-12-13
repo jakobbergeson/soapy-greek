@@ -27,7 +27,7 @@ article {
 main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   flex-grow: 1;
   flex-shrink: 0;
 }
@@ -307,6 +307,30 @@ fieldset {
 
 .social-icon:hover {
   opacity: 1;
+}
+
+.projects-hero {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction: row;
+  margin: 0 0 2% 0;
+  height: 380px;
+  background-position: 0% 25%;
+  z-index: 100;
+}
+
+.projects-hero h1{
+  color:rgb(246,246,246);
+  font-size: var(--text-5xl);
+  text-align: center;
+}
+
+.projects-hero-title{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 200;
 }
 
 .story-hero {
@@ -842,7 +866,6 @@ ul li {
   .posts {
     padding-inline-end: 40px;
   }
-    
     
   }
 
