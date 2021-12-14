@@ -27,9 +27,9 @@ const ProjectHero = () => {
   `);
 
   const image = getImage(data.allContentfulProjectHero.edges[0].node.heroImage);
-  const bg = data.allContentfulProjectHero.edges[0].node.heroImage.fluid.src;
 
   const bgImage = convertToBgImage(image);
+
   return (
 
     <BackgroundImage
@@ -37,19 +37,12 @@ const ProjectHero = () => {
       {...bgImage}
       preserveStackingContext
     >
-      {/* <div
-      className="projects-hero"
-      style={{
-        backgroundImage: `url${bg}`
-      }}
-    > */}
       <div className="projects-hero-title" >
         <div className="title-line" />
         <h1>{data.allContentfulProjectHero.edges[0].node.heroTitle}</h1>
         <div className="title-line" />
       </div>
-      {/* </div> */}
-    // </BackgroundImage>
+    </BackgroundImage>
   );
 };
 
