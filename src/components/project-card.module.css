@@ -1,0 +1,63 @@
+.projectLink {
+  margin: 0;
+  padding:0;
+}
+
+.postDate {
+  display:flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  align-items: center;
+  background-color: rgb(238, 232, 243);
+  z-index: 150;
+  height: 50px;
+  margin: 30px;
+  padding: 9px;
+  max-width: fit-content;
+}
+
+.projectCardStyle {
+  min-height: 376px;
+  z-index: 100;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.projectDescriptionStyle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--semibold);
+  font-size: small;
+  color:#FFFFFF;
+  z-index: 200;
+  margin: 0;
+}
+
+.projectTitleStyle {
+  width: 100%;
+  font-size: 22px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: var(--dense);
+  color:#FFFFFF;
+  z-index: 200;
+  margin: 20px 0;
+}
+
+
+
+
+@media screen and (max-width: 435px) {
+
+  .productHeadingStyle{
+    font-size: var(--text-lg);
+  }
+  
+}

@@ -1,0 +1,37 @@
+.listingContainerWrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: var(--size-input);
+  padding-bottom: var(--size-input);
+  background-color: inherit;
+}
+
+.listingContainerStyle {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  gap: var(--size-gutter);
+  padding: 0 var(--size-gutter);
+  max-width: 1380px;
+}
+
+@media screen and (max-width: 768px){
+
+  .listingContainerStyle{
+    grid-template-columns: 1fr;
+    gap: var( --size-gutter-raw);
+    padding: 0 var( --size-gutter-raw);
+  }
+
+}
+
+@media screen and (max-width: 500px){
+
+  .listingContainerStyle{
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 0 16px;
+  }
+
+}
+
