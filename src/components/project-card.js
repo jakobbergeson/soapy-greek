@@ -3,6 +3,7 @@ import { convertToBgImage } from "gbimage-bridge";
 import BackgroundImage from 'gatsby-background-image';
 import {
   projectCardStyle,
+  projectText,
   projectTitleStyle,
   projectDescriptionStyle,
   projectLink,
@@ -35,17 +36,20 @@ const ProjectCard = ({
         <div className={postDate}>
           <h4>{date}</h4>
         </div>
-        <h1
-          className={projectTitleStyle}
+        <div
+          className={projectText}
         >
-          {title}
-        </h1>
-        <p
-          className={projectDescriptionStyle}
-        >
-          {description}
-        </p>
-
+          <h1
+            className={projectTitleStyle}
+          >
+            {title}
+          </h1>
+          <p
+            className={projectDescriptionStyle}
+          >
+            {description}
+          </p>
+        </div>
         <div
           className='overlayGradient'
         ></div>
