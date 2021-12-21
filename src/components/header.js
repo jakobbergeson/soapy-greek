@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import * as React from "react";
-import { jsx } from "theme-ui";
+import { jsx, Image } from "theme-ui";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
