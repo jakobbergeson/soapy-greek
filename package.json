@@ -30,6 +30,7 @@
     "gatsby-transformer-remark": "^4.8.0",
     "gatsby-transformer-sharp": "^3.9.0",
     "gbimage-bridge": "^0.1.4",
+    "gsap": "^3.9.0",
     "isomorphic-fetch": "^3.0.0",
     "lodash.debounce": "^4.0.8",
     "lodash.isequal": "^4.5.0",

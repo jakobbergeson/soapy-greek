@@ -773,6 +773,107 @@ ul li {
 .stretch {
   width: auto;
 }
+.not-found-wrapper {
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+
+.not-found-text {
+  position: absolute;
+  max-width: fit-content;
+  z-index: 100;
+  color:rgb(40, 13, 66);
+}
+
+.heading {
+  top: 3%;
+  left: 50%;
+  transform: translate(-50%, -3%);
+  font-size: 80px;
+  margin: 0px;
+}
+
+.blurb {
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -15%);
+}
+
+.button {
+  top: 98%;
+  left: 50%;
+  transform: translate(-50%, -98%);
+  margin:.5rem;
+}
+
+.button h3{
+  margin: 0px;
+}
+
+.not-found-image-wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+.layer {
+  background-color: transparent;
+}
+
+.atlas {
+  position: absolute;
+  top: 82%;
+  left: 50%;
+  transform: translate(-50%, -82%);
+  object-fit: cover;
+  width: 25vw;
+  z-index: 200;
+}
+
+.soap {
+  position: absolute;
+  top: 27%;
+  left: 52%;
+  transform: translate(-53%, -29%);
+  object-fit: cover;
+  width: 28vw;
+  z-index: 180;
+}
+
+.bubbles1 {
+  position: absolute;
+  top: 17%;
+  left: 49%;
+  transform: translate(-49%, -17%);
+  object-fit: cover;
+  width: 28vw;
+  z-index: 210;
+}
+
+.bubbles2 {
+  position: absolute;
+  top: 17%;
+  left: 49%;
+  transform: translate(-49%, -17%);
+  object-fit: cover;
+  width: 28vw;
+  z-index: 210;
+}
+
+.bubbles3 {
+  position: absolute;
+  top: 17%;
+  left: 49%;
+  transform: translate(-49%, -17%);
+  object-fit: cover;
+  width: 28vw;
+  z-index: 210;
+}
 
 @media screen and (max-width: 1280px){
 
