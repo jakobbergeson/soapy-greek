@@ -774,14 +774,30 @@ ul li {
   width: auto;
 }
 .not-found-wrapper {
-  position: absolute;
-  top: 0;
-  left:0;
+  background-image: url("../images/Bubble-10s-1084px.gif");
   width: 100vw;
   height: 100vh;
-  background-position: center;
-  background-size:cover;
-  background-repeat:no-repeat;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-found-wrapper:before, .not-found-wrapper:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 60px;    
+}
+
+.not-found-wrapper::before {
+  top: 0;
+  background-image: linear-gradient(to bottom, rgba(246, 246, 246,1), rgba(246, 246, 246,0));
+}
+
+.not-found-wrapper::after {
+  bottom: 0;
+  background-image: linear-gradient(to top, rgba(246, 246, 246,1), rgba(246, 246, 246,0));
 }
 
 .not-found-text {
@@ -816,63 +832,53 @@ ul li {
   margin: 0px;
 }
 
-.not-found-image-wrapper {
-  width: 100vw;
-  height: 100vh;
-}
-
-.layer {
-  background-color: transparent;
-}
-
-.atlas {
-  position: absolute;
-  top: 82%;
+.not-found-container {
+  position: fixed;
+  top: 75%;
   left: 50%;
-  transform: translate(-50%, -82%);
-  object-fit: cover;
-  width: 25vw;
+  transform: translate(-50%, -75%);
+  max-width: 100%;
+}
+
+.not-found-svg {
+  max-width: 100%;
+  
+}
+
+.not-found-icon {
+  width: 30%;
   z-index: 200;
+  position:absolute;
+  top: 50%;
+  left: 50%;
 }
 
-.soap {
-  position: absolute;
-  top: 27%;
-  left: 52%;
-  transform: translate(-53%, -29%);
-  object-fit: cover;
-  width: 28vw;
-  z-index: 180;
+.translate-roll {
+  animation: translate-roll 12s infinite linear;
+  transform-origin: center;
 }
 
-.bubbles1 {
-  position: absolute;
-  top: 17%;
-  left: 49%;
-  transform: translate(-49%, -17%);
-  object-fit: cover;
-  width: 28vw;
-  z-index: 210;
+.roll {
+  animation: roll 12s infinite linear;
+  transform-origin: center;
 }
 
-.bubbles2 {
-  position: absolute;
-  top: 17%;
-  left: 49%;
-  transform: translate(-49%, -17%);
-  object-fit: cover;
-  width: 28vw;
-  z-index: 210;
+@keyframes translate-roll {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+      -webkit-transform: translate(-50%, -50%) rotate(-360deg);
+  }
 }
 
-.bubbles3 {
-  position: absolute;
-  top: 17%;
-  left: 49%;
-  transform: translate(-49%, -17%);
-  object-fit: cover;
-  width: 28vw;
-  z-index: 210;
+@keyframes roll {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+      -webkit-transform:rotate(-360deg);
+  }
 }
 
 @media screen and (max-width: 1280px){
