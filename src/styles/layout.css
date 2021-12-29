@@ -250,7 +250,7 @@ fieldset {
 }
 
 .footer-notes-template span {
-  color: goldenrod;
+  color: #daa520;
 }
 
 .copyright-text {
@@ -787,7 +787,10 @@ ul li {
   width: 0;
   height: 100%;
   right: 100%;
-  background-color: goldenrod;
+  background: rgb(218,165,32);
+background: radial-gradient(circle, rgba(218,165,32,1) 17%, rgba(155,117,219,1) 44%);
+
+
   z-index: 180;
 }
 
@@ -816,31 +819,57 @@ ul li {
 
 .not-found-text {
   position: absolute;
-  max-width: fit-content;
+  font-weight: 800;
   z-index: 100;
-  color:rgb(40, 13, 66);
+  margin:.5rem;
+}
+
+.four-oh-four {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  top:8%;
+  left: 50%;
+  transform: translate(-50%, -10%);
 }
 
 .heading {
-  top: 3%;
-  left: 50%;
-  transform: translate(-50%, -3%);
-  font-size: 80px;
+  color: var(--purple-70);
+  font-size: 5rem;
   margin: 0px;
+  
 }
 
 .blurb {
-  top: 15%;
-  left: 50%;
-  transform: translate(-50%, -15%);
+  color: var(--purple-70);
+  font-weight: 800;
+  font-size: 1.5rem;
+  margin-top: 0px;
+  width: 100%;
+  text-align: center;
 }
 
 .button {
-  top: 98%;
+  top: 94%;
   left: 50%;
-  transform: translate(-50%, -98%);
-  margin:.5rem;
+  transform: translate(-50%, -94%);
   z-index: 200;
+  display: flex;
+  flex-direction: row;
+  color: var(--text-color-inverted);
+  background-color: var(--purple-70);
+  padding: var(--space-sm) var(--space-xl);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: var(--text-md);
+  align-items: center;
+  height: var(--size-input);
+  justify-content: center;
+  transition: all 1s ease;
+  cursor: pointer;
 }
 
 
@@ -1118,6 +1147,28 @@ ul li {
 
   .not-found-svg {
     padding: 0 16px;
+  }
+
+  .four-oh-four {
+    width: fit-content;
+  }
+
+  .heading {
+    font-size: 60px;
+    padding: 0 16px;
+  }
+
+  .blurb {
+    font-size: 18px;
+    padding: 0 16px;
+  }
+
+  .button h3 {
+    font-size: 16px;
+  }
+
+  .overlay-active {
+    width: 0;
   }
 
 }
