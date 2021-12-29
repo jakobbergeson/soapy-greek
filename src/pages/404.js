@@ -7,6 +7,8 @@ import HeadTag from "../components/head";
 
 const NotFoundPage = () => {
 
+  const [homeHover, sethomeHover] = React.useState(false);
+
   return (
     <div
       className="not-found-wrapper"
@@ -25,8 +27,11 @@ const NotFoundPage = () => {
       <div
         className="not-found-container"
       >
+        <div
+          className={homeHover ? "not-found-overlay overlay-active" : "not-found-overlay"}
+        />
         <img
-          className="not-found-icon translate-roll"
+          className={homeHover ? "not-found-icon og-position" : "not-found-icon translate-roll"}
           src={Icon}
         />
         <svg class="not-found-svg" x="0px" y="0px" width="739.6px" height="353px" viewBox="0 0 739.6 348.8" >
@@ -124,18 +129,18 @@ const NotFoundPage = () => {
 							c-16.5,6.3-34.1,9.6-51.9,9.6C261.3,293.7,196.5,229,196.4,149.3C196.4,149.3,196.4,149.3,196.4,149.3z"></path>
             </g>
           </g>
-
         </svg>
       </div>
       <Link
         to="/"
         className="not-found-text button"
+        onMouseOver={() => { sethomeHover(true); }}
+        onMouseOut={() => { sethomeHover(false); }}
       >
         <h3>
           Back To Home
         </h3>
       </Link>
-
     </div>
   );
 };
