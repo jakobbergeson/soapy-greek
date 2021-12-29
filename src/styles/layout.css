@@ -741,12 +741,12 @@ color:rgb(51, 51, 51);
 }
 
 .img-overlay{
-    z-index: 1;
-    display: flex;
-    flex:1;
-    background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.63));
-    justify-content: center;
-    align-items:center;
+  z-index: 1;
+  display: flex;
+  flex:1;
+  background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.63));
+  justify-content: center;
+  align-items:center;
 }
 
 ul {
@@ -781,6 +781,7 @@ ul li {
   justify-content: center;
   align-items: center;
 }
+
 .not-found-overlay {
   position: absolute;
   transition: 1s ease;
@@ -788,9 +789,7 @@ ul li {
   height: 100%;
   right: 100%;
   background: rgb(218,165,32);
-background: radial-gradient(circle, rgba(218,165,32,1) 17%, rgba(155,117,219,1) 44%);
-
-
+  background: radial-gradient(circle, rgba(218,165,32,1) 17%, rgba(155,117,219,1) 44%);
   z-index: 180;
 }
 
@@ -798,6 +797,7 @@ background: radial-gradient(circle, rgba(218,165,32,1) 17%, rgba(155,117,219,1) 
   transition: 1s ease;
   width: 100%;
   right: 0;
+  animation: fadeIn .9s linear;
 }
 .not-found-wrapper:before, .not-found-wrapper:after {
   content: '';
@@ -888,6 +888,7 @@ background: radial-gradient(circle, rgba(218,165,32,1) 17%, rgba(155,117,219,1) 
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  margin-top: 1rem;
 }
 
 .not-found-icon {
@@ -917,6 +918,15 @@ background: radial-gradient(circle, rgba(218,165,32,1) 17%, rgba(155,117,219,1) 
   transform-origin: center;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
 @keyframes translate-roll {
   0% {
     -webkit-transform: translate(-50%, -50%) rotate(0deg);
@@ -944,13 +954,21 @@ background: radial-gradient(circle, rgba(218,165,32,1) 17%, rgba(155,117,219,1) 
   }
 }
 
-@media screen and (max-width: 1280px){
+@media screen and (max-width: 1280px) {
 
   .slider-wrapper {
     margin: 1rem;
   }
 
 }
+
+@media screen and (max-width: 1025px) {
+
+  .overlay-active {
+    width: 0;
+  }
+}
+
 @media screen and (max-width: 991px){
   .split-hero-wrapper{
     flex-direction: column;
@@ -1047,7 +1065,7 @@ background: radial-gradient(circle, rgba(218,165,32,1) 17%, rgba(155,117,219,1) 
     padding-inline-end: 40px;
   }
     
-  }
+}
 
 @media screen and (max-width: 765px) {
   
