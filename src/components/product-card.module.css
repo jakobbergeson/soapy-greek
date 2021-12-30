@@ -35,7 +35,7 @@
 
 .productHeadingStyle {
   width: 100%;
-  font-size: var(--text-lg);
+  font-size: var(--text-2xl);
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -44,6 +44,14 @@
 
 .productPrice {
   color: var(--text-color-secondary);
+  font-size: var(--text-xl);
+}
+
+@media screen and (max-width: 1025px) {
+
+  .productHeadingStyle{
+    font-size: var(--text-xl);
+  }
 }
 
 @media screen and (max-width: 435px) {
