@@ -41,7 +41,6 @@
   right: 20px;
   height: 16px;
   min-width: 16px;
-  padding: 0 var(--space-sm);
 }
 
 .cartButton[aria-current="page"] {

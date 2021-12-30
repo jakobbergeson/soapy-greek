@@ -14,7 +14,7 @@ const SplitHeros = () => {
           link
           backgroundPicture{
 						title
-            fixed{
+            fixed(width: 2000){
 							src
             }
           }
