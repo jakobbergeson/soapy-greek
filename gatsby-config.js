@@ -20,6 +20,17 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Cinzel\:200,300,400,500,600,700,800`,
+          `serif\:200,300,400,500,600,700,800`,
+          `Roboto\:200,300,400,500,600,700,800`,
+        ],
+        display: 'swap'
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

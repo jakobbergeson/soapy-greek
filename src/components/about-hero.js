@@ -1,5 +1,4 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui";
+import * as React from "react";
 import { getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 import { convertToBgImage } from "gbimage-bridge";
