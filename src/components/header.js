@@ -1,4 +1,3 @@
-/** @jsx jsx */
 import * as React from "react";
 import { jsx, Image } from "theme-ui";
 import PropTypes from "prop-types";

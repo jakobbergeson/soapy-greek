@@ -1,6 +1,4 @@
-/** @jsx jsx */
 import * as React from "react";
-import { jsx } from "theme-ui";
 import { Link } from "gatsby";
 import Icon from '../images/Favicon_SOAP_w_bubbles-01.png';
 import NotFound from "../icons/not-found";

@@ -1,12 +1,11 @@
-/** @jsx jsx */
-import { jsx } from "theme-ui"
-import * as React from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
+import * as React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faTwitter,
   faTwitch,
   faInstagram,
-} from "@fortawesome/free-brands-svg-icons"
+} from "@fortawesome/free-brands-svg-icons";
 
 const Social = () => {
   return (
@@ -18,9 +17,9 @@ const Social = () => {
       >
         <FontAwesomeIcon icon={faTwitch} className="social-icon" />
       </a>
-      <a href="https://twitter.com/?lang=en" 
-          target="_blank" 
-          rel="noreferrer">
+      <a href="https://twitter.com/?lang=en"
+        target="_blank"
+        rel="noreferrer">
         <FontAwesomeIcon icon={faTwitter} className="social-icon" />
       </a>
       <a
@@ -31,6 +30,6 @@ const Social = () => {
         <FontAwesomeIcon icon={faInstagram} className="social-icon" />
       </a>
     </div>
-  )
-}
-export default Social
+  );
+};
+export default Social;
